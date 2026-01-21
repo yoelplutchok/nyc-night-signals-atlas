@@ -2,7 +2,7 @@
 
 A data-driven analysis of nighttime disturbance patterns across New York City, using 311 noise complaint data to identify behavioral profiles, temporal stability, and concentrated hotspots.
 
-**[View the Project Website](https://yoelplutchok.github.io/Sleep_ESI_NYC/)**
+**[View the Project Website](https://yoelplutchok.github.io/nyc-night-signals-atlas/)**
 
 ---
 
@@ -191,7 +191,7 @@ Raw data files are not included in this repository due to size (7.3GB). To repro
 ## Project Structure
 
 ```
-Sleep_ESI_NYC/
+nyc-night-signals-atlas/
 ├── configs/           # Configuration files (params.yml, weights.yml)
 ├── data/
 │   ├── processed/     # Analysis outputs (included)
@@ -215,7 +215,7 @@ Code: MIT License | Data outputs: CC BY 4.0
 ```
 Plutchok, Y.Y. (2025). NYC Night Signals Atlas: Nighttime Noise Disturbance
 Patterns Across New York City Community Districts, 2021-2023.
-https://github.com/yoelplutchok/Sleep_ESI_NYC
+https://github.com/yoelplutchok/nyc-night-signals-atlas
 ```
 
 ---
