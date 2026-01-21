@@ -1,0 +1,70 @@
+{
+  "script": "05_build_light_viirs",
+  "run_id": "20260121_134836",
+  "timestamp": "2026-01-21T13:48:38.462984",
+  "inputs": {
+    "viirs_2021": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/light_viirs/VNP46A4/2021/VNP46A4.A2021001.h10v04.002.2025149103943.h5",
+    "viirs_2022": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/light_viirs/VNP46A4/2022/VNP46A4.A2022001.h10v04.002.2025156103229.h5",
+    "viirs_2023": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/light_viirs/VNP46A4/2023/VNP46A4.A2023001.h10v04.002.2025161112513.h5",
+    "viirs_2021_sha256": "dee13b0df1461a8393733cfb570d8a3a92dd460a1b82451861f552acaa7aee95",
+    "viirs_2022_sha256": "02149beae92d432a4a905ed892e60a14879f07154a9a6dd584a71da48a912b5d",
+    "viirs_2023_sha256": "30a72ad7cb5ac12b1005d2e9e0fd7ed6cfb1febcad3b533a9e5f4bb1f62d8617",
+    "cd59": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/geo/cd59.parquet"
+  },
+  "outputs": {
+    "light_viirs_cd": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/context/light_viirs_cd.parquet"
+  },
+  "time_windows": {
+    "primary": {
+      "years": [
+        2021,
+        2022,
+        2023
+      ],
+      "label": "2021-2023"
+    },
+    "sensitivity": {
+      "years": [
+        2022,
+        2023
+      ],
+      "label": "2022-2023 (pandemic distortion check)"
+    }
+  },
+  "stats": {
+    "n_districts": 59,
+    "radiance_raw_range": [
+      26.629751205444336,
+      198.29223124186197
+    ],
+    "na_count": 0,
+    "avg_nodata_pct": 0.0,
+    "avg_valid_pixels": 102.1864406779661
+  },
+  "raster_metadata": {
+    "product": "VNP46A4",
+    "collection": "002",
+    "tile": "h10v04",
+    "crs": "EPSG:4326",
+    "resolution_arcsec": 15,
+    "resolution_approx_m": 450,
+    "layer": "AllAngle_Composite_Snow_Free",
+    "units": "nWatts/(cm^2 sr)",
+    "fill_value": -999.9,
+    "valid_min": 0.0,
+    "years_processed": [
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "directionality": "higher_light_worse",
+  "dependencies": {
+    "h5py": "3.15.1",
+    "note": "Requires h5py>=3.10 and libgdal-hdf5>=3.8 for HDF5/HDF-EOS2 support"
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}

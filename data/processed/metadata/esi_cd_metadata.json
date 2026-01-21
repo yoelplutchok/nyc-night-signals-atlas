@@ -1,0 +1,135 @@
+{
+  "script": "08_build_index",
+  "run_id": "20251217_213958",
+  "timestamp": "2025-12-17T21:39:58.826655",
+  "inputs": {
+    "domains_dir": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/domains",
+    "noise_obj": "cc983e9c3d9352493509c1fc69a0b533c5f1424413f8537e8e959ea6f235b148",
+    "light": "dcbe702b82d313eef7ae1d6457c441444f19ac794d1af7c289fbb5f8904d58b3",
+    "heat": "079d3067a0424cd4ef5fd817954c2377094dce940e9e237496ff422652459bfc",
+    "air": "11493887584e7e296f5840f115795cf8e5293256953a429b08803121a8940ba0",
+    "noise_311": "1c9c3f8528e78b58c608b155cbc36becff91104177e3465f28af9a585b664ac2"
+  },
+  "outputs": {
+    "esi_cd_versioned": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/index/esi_cd_2021_2023.parquet",
+    "esi_cd_latest": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/index/esi_cd.parquet",
+    "rank_movement": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/index/esi_rank_movement_2021_2023.csv",
+    "rank_stability": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/index/esi_rank_stability_2021_2023.csv"
+  },
+  "time_window": {
+    "year_start": 2021,
+    "year_end": 2023
+  },
+  "canonical_names": {
+    "oesi_4_equal": "OESI_4_full_noise",
+    "rdi_311": "RDI_311",
+    "sdbi_5_equal": "SDBI_5_obj_plus_rdi"
+  },
+  "indices": {
+    "OESI_4_full_noise": {
+      "internal_name": "oesi_4_equal",
+      "name": "O-ESI (4 domains, full objective noise, equal weights)",
+      "domains": [
+        "noise_obj",
+        "light",
+        "heat",
+        "air"
+      ],
+      "weights": {
+        "noise_obj": 0.25,
+        "light": 0.25,
+        "heat": 0.25,
+        "air": 0.25
+      },
+      "description": "Objective Environmental Sleep Index using BTS NTNM full noise"
+    },
+    "RDI_311": {
+      "internal_name": "rdi_311",
+      "name": "RDI (311 Noise Complaints)",
+      "domains": [
+        "noise_311"
+      ],
+      "weights": {
+        "noise_311": 1.0
+      },
+      "description": "Reported Disturbance Index from nighttime 311 complaints"
+    },
+    "SDBI_5_obj_plus_rdi": {
+      "internal_name": "sdbi_5_equal",
+      "name": "SDBI (5 domains, objective + RDI, equal weights)",
+      "domains": [
+        "noise_obj",
+        "light",
+        "heat",
+        "air",
+        "noise_311"
+      ],
+      "weights": {
+        "noise_obj": 0.2,
+        "light": 0.2,
+        "heat": 0.2,
+        "air": 0.2,
+        "noise_311": 0.2
+      },
+      "description": "Sleep Disturbance Burden Index combining objective + reported (NEVER describe as objective-only)"
+    }
+  },
+  "z_score_columns_used": {
+    "noise_obj": "z_noise_obj_db_mean_robust",
+    "light": "z_light_robust",
+    "heat": "z_heat_tmin_robust",
+    "air": "z_air_combined_robust",
+    "noise_311": "z_noise311_robust"
+  },
+  "domain_sources": {
+    "noise_obj": {
+      "file": "noise_obj_full_cd.parquet",
+      "z_col": "z_noise_obj_db_mean_robust",
+      "name": "Objective Noise (Full)",
+      "units": "dB (LAeq)"
+    },
+    "light": {
+      "file": "light_viirs_cd.parquet",
+      "z_col": "z_light_robust",
+      "name": "Light at Night",
+      "units": "nW/cm\u00b2/sr"
+    },
+    "heat": {
+      "file": "heat_cd.parquet",
+      "z_col": "z_heat_tmin_robust",
+      "name": "Nighttime Heat",
+      "units": "\u00b0C"
+    },
+    "air": {
+      "file": "air_cd.parquet",
+      "z_col": "z_air_combined_robust",
+      "name": "Air Quality",
+      "units": "\u03bcg/m\u00b3"
+    },
+    "noise_311": {
+      "file": "noise_311_cd.parquet",
+      "z_col": "z_noise311_robust",
+      "name": "311 Noise Complaints (RDI)",
+      "units": "complaints/1k pop/year"
+    }
+  },
+  "stats": {
+    "n_districts": 59,
+    "index_columns_internal": [
+      "oesi_4_equal",
+      "rdi_311",
+      "sdbi_5_equal"
+    ],
+    "index_columns_canonical": [
+      "OESI_4_full_noise",
+      "RDI_311",
+      "SDBI_5_obj_plus_rdi"
+    ]
+  },
+  "directionality": "higher_index_worse",
+  "weighting_scheme": "equal",
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}

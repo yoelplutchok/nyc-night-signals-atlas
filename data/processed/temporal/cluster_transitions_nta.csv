@@ -1,0 +1,198 @@
+ntacode,2021,2022,2023,nta_name,transition_2021_2022,transition_2022_2023,n_unique_clusters,is_stable
+BK0101,1,4,6,Greenpoint,1 -> 4,4 -> 6,3,False
+BK0102,8,1,3,Williamsburg,8 -> 1,1 -> 3,3,False
+BK0103,-1,0,8,South Williamsburg,-1 -> 0,0 -> 8,3,False
+BK0104,1,1,3,East Williamsburg,1 -> 1,1 -> 3,2,False
+BK0201,3,4,2,Brooklyn Heights,3 -> 4,4 -> 2,3,False
+BK0202,3,0,8,Downtown Brooklyn-DUMBO-Boerum Hill,3 -> 0,0 -> 8,3,False
+BK0203,3,4,8,Fort Greene,3 -> 4,4 -> 8,3,False
+BK0204,3,4,8,Clinton Hill,3 -> 4,4 -> 8,3,False
+BK0301,1,1,1,Bedford-Stuyvesant (West),1 -> 1,1 -> 1,1,True
+BK0302,0,2,3,Bedford-Stuyvesant (East),0 -> 2,2 -> 3,3,False
+BK0401,4,1,3,Bushwick (West),4 -> 1,1 -> 3,3,False
+BK0402,4,2,3,Bushwick (East),4 -> 2,2 -> 3,3,False
+BK0501,4,6,3,Cypress Hills,4 -> 6,6 -> 3,3,False
+BK0502,4,6,3,East New York (North),4 -> 6,6 -> 3,3,False
+BK0503,4,2,3,East New York-New Lots,4 -> 2,2 -> 3,3,False
+BK0504,0,0,1,Spring Creek-Starrett City,0 -> 0,0 -> 1,2,False
+BK0505,4,2,1,East New York-City Line,4 -> 2,2 -> 1,3,False
+BK0601,3,4,2,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,3 -> 4,4 -> 2,3,False
+BK0602,3,4,2,Park Slope,3 -> 4,4 -> 2,3,False
+BK0701,1,4,8,Windsor Terrace-South Slope,1 -> 4,4 -> 8,3,False
+BK0702,8,8,0,Sunset Park (West),8 -> 8,8 -> 0,2,False
+BK0703,1,1,0,Sunset Park (Central),1 -> 1,1 -> 0,2,False
+BK0801,3,4,2,Prospect Heights,3 -> 4,4 -> 2,3,False
+BK0802,0,2,1,Crown Heights (North),0 -> 2,2 -> 1,3,False
+BK0901,0,4,1,Crown Heights (South),0 -> 4,4 -> 1,3,False
+BK0902,1,2,3,Prospect Lefferts Gardens-Wingate,1 -> 2,2 -> 3,3,False
+BK1001,1,1,1,Bay Ridge,1 -> 1,1 -> 1,1,True
+BK1002,1,4,1,Dyker Heights,1 -> 4,4 -> 1,2,False
+BK1101,1,2,1,Bensonhurst,1 -> 2,2 -> 1,2,False
+BK1102,0,2,1,Bath Beach,0 -> 2,2 -> 1,3,False
+BK1103,1,0,1,Gravesend (West),1 -> 0,0 -> 1,2,False
+BK1201,0,6,3,Sunset Park (East)-Borough Park (West),0 -> 6,6 -> 3,3,False
+BK1202,3,4,1,Borough Park,3 -> 4,4 -> 1,3,False
+BK1203,1,4,0,Kensington,1 -> 4,4 -> 0,3,False
+BK1204,0,0,1,Mapleton-Midwood (West),0 -> 0,0 -> 1,2,False
+BK1301,0,2,1,Gravesend (South),0 -> 2,2 -> 1,3,False
+BK1302,4,2,1,Coney Island-Sea Gate,4 -> 2,2 -> 1,3,False
+BK1303,0,2,1,Brighton Beach,0 -> 2,2 -> 1,3,False
+BK1401,0,2,1,Flatbush,0 -> 2,2 -> 1,3,False
+BK1402,0,2,8,Flatbush (West)-Ditmas Park-Parkville,0 -> 2,2 -> 8,3,False
+BK1403,0,0,1,Midwood,0 -> 0,0 -> 1,2,False
+BK1501,0,1,1,Gravesend (East)-Homecrest,0 -> 1,1 -> 1,2,False
+BK1502,0,4,8,Madison,0 -> 4,4 -> 8,3,False
+BK1503,0,0,1,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,0 -> 0,0 -> 1,2,False
+BK1601,4,2,3,Ocean Hill,4 -> 2,2 -> 3,3,False
+BK1602,0,2,0,Brownsville,0 -> 2,2 -> 0,2,False
+BK1701,0,2,3,East Flatbush-Erasmus,0 -> 2,2 -> 3,3,False
+BK1702,4,2,3,East Flatbush-Farragut,4 -> 2,2 -> 3,3,False
+BK1703,4,2,3,East Flatbush-Rugby,4 -> 2,2 -> 3,3,False
+BK1704,0,2,1,East Flatbush-Remsen Village,0 -> 2,2 -> 1,3,False
+BK1801,4,1,3,Flatlands,4 -> 1,1 -> 3,3,False
+BK1802,3,2,1,Marine Park-Mill Basin-Bergen Beach,3 -> 2,2 -> 1,3,False
+BK1803,4,2,3,Canarsie,4 -> 2,2 -> 3,3,False
+BX0101,4,0,7,Mott Haven-Port Morris,4 -> 0,0 -> 7,3,False
+BX0102,0,2,3,Melrose,0 -> 2,2 -> 3,3,False
+BX0201,0,6,1,Hunts Point,0 -> 6,6 -> 1,3,False
+BX0202,4,6,3,Longwood,4 -> 6,6 -> 3,3,False
+BX0301,0,6,7,Morrisania,0 -> 6,6 -> 7,3,False
+BX0302,0,2,7,Claremont Village-Claremont (East),0 -> 2,2 -> 7,3,False
+BX0303,2,6,7,Crotona Park East,2 -> 6,6 -> 7,3,False
+BX0401,2,6,7,Concourse-Concourse Village,2 -> 6,6 -> 7,3,False
+BX0402,2,6,7,Highbridge,2 -> 6,6 -> 7,3,False
+BX0403,2,6,7,Mount Eden-Claremont (West),2 -> 6,6 -> 7,3,False
+BX0501,2,6,7,University Heights (South)-Morris Heights,2 -> 6,6 -> 7,3,False
+BX0502,2,6,7,Mount Hope,2 -> 6,6 -> 7,3,False
+BX0503,2,6,7,Fordham Heights,2 -> 6,6 -> 7,3,False
+BX0601,2,6,7,West Farms,2 -> 6,6 -> 7,3,False
+BX0602,4,2,1,Tremont,4 -> 2,2 -> 1,3,False
+BX0603,1,1,3,Belmont,1 -> 1,1 -> 3,2,False
+BX0701,2,2,1,University Heights (North)-Fordham,2 -> 2,2 -> 1,2,False
+BX0702,4,2,3,Bedford Park,4 -> 2,2 -> 3,3,False
+BX0703,4,6,3,Norwood,4 -> 6,6 -> 3,3,False
+BX0801,4,2,1,Kingsbridge Heights-Van Cortlandt Village,4 -> 2,2 -> 1,3,False
+BX0802,4,6,3,Kingsbridge-Marble Hill,4 -> 6,6 -> 3,3,False
+BX0803,0,4,6,Riverdale-Spuyten Duyvil,0 -> 4,4 -> 6,3,False
+BX0901,4,6,4,Soundview-Bruckner-Bronx River,4 -> 6,6 -> 4,2,False
+BX0902,2,6,4,Soundview-Clason Point,2 -> 6,6 -> 4,3,False
+BX0903,4,6,4,Castle Hill-Unionport,4 -> 6,6 -> 4,2,False
+BX0904,0,0,1,Parkchester,0 -> 0,0 -> 1,2,False
+BX1001,4,6,3,Westchester Square,4 -> 6,6 -> 3,3,False
+BX1002,4,2,4,Throgs Neck-Schuylerville,4 -> 2,2 -> 4,2,False
+BX1003,1,1,1,Pelham Bay-Country Club-City Island,1 -> 1,1 -> 1,1,True
+BX1004,0,6,-1,Co-op City,0 -> 6,6 -> -1,3,False
+BX1101,4,2,1,Pelham Parkway-Van Nest,4 -> 2,2 -> 1,3,False
+BX1102,0,0,1,Morris Park,0 -> 0,0 -> 1,2,False
+BX1103,0,1,1,Pelham Gardens,0 -> 1,1 -> 1,2,False
+BX1104,0,2,1,Allerton,0 -> 2,2 -> 1,3,False
+BX1201,4,2,3,Williamsbridge-Olinville,4 -> 2,2 -> 3,3,False
+BX1202,4,2,4,Eastchester-Edenwald-Baychester,4 -> 2,2 -> 4,2,False
+BX1203,6,3,4,Wakefield-Woodlawn,6 -> 3,3 -> 4,3,False
+MN0101,3,4,6,Financial District-Battery Park City,3 -> 4,4 -> 6,3,False
+MN0102,3,4,6,Tribeca-Civic Center,3 -> 4,4 -> 6,3,False
+MN0201,1,1,6,SoHo-Little Italy-Hudson Square,1 -> 1,1 -> 6,2,False
+MN0202,8,4,6,Greenwich Village,8 -> 4,4 -> 6,3,False
+MN0203,1,4,6,West Village,1 -> 4,4 -> 6,3,False
+MN0301,1,1,3,Chinatown-Two Bridges,1 -> 1,1 -> 3,2,False
+MN0302,2,1,3,Lower East Side,2 -> 1,1 -> 3,3,False
+MN0303,2,1,7,East Village,2 -> 1,1 -> 7,3,False
+MN0401,7,7,2,Chelsea-Hudson Yards,7 -> 7,7 -> 2,2,False
+MN0402,1,1,3,Hell's Kitchen,1 -> 1,1 -> 3,2,False
+MN0501,3,4,6,Midtown South-Flatiron-Union Square,3 -> 4,4 -> 6,3,False
+MN0502,3,4,6,Midtown-Times Square,3 -> 4,4 -> 6,3,False
+MN0601,0,4,1,Stuyvesant Town-Peter Cooper Village,0 -> 4,4 -> 1,3,False
+MN0602,3,4,6,Gramercy,3 -> 4,4 -> 6,3,False
+MN0603,3,7,2,Murray Hill-Kips Bay,3 -> 7,7 -> 2,3,False
+MN0604,3,4,6,East Midtown-Turtle Bay,3 -> 4,4 -> 6,3,False
+MN0701,7,7,2,Upper West Side-Lincoln Square,7 -> 7,7 -> 2,2,False
+MN0702,3,7,2,Upper West Side (Central),3 -> 7,7 -> 2,3,False
+MN0703,1,2,2,Upper West Side-Manhattan Valley,1 -> 2,2 -> 2,2,False
+MN0801,3,4,6,Upper East Side-Lenox Hill-Roosevelt Island,3 -> 4,4 -> 6,3,False
+MN0802,3,4,2,Upper East Side-Carnegie Hill,3 -> 4,4 -> 2,3,False
+MN0803,3,4,6,Upper East Side-Yorkville,3 -> 4,4 -> 6,3,False
+MN0901,3,4,6,Morningside Heights,3 -> 4,4 -> 6,3,False
+MN0902,2,2,7,Manhattanville-West Harlem,2 -> 2,2 -> 7,2,False
+MN0903,2,2,7,Hamilton Heights-Sugar Hill,2 -> 2,2 -> 7,2,False
+MN1001,2,0,7,Harlem (South),2 -> 0,0 -> 7,3,False
+MN1002,0,2,7,Harlem (North),0 -> 2,2 -> 7,3,False
+MN1101,0,2,7,East Harlem (South),0 -> 2,2 -> 7,3,False
+MN1102,0,2,3,East Harlem (North),0 -> 2,2 -> 3,3,False
+MN1201,2,6,7,Washington Heights (South),2 -> 6,6 -> 7,3,False
+MN1202,2,6,7,Washington Heights (North),2 -> 6,6 -> 7,3,False
+MN1203,2,6,7,Inwood,2 -> 6,6 -> 7,3,False
+QN0101,1,1,3,Astoria (North)-Ditmars-Steinway,1 -> 1,1 -> 3,2,False
+QN0102,1,4,8,Old Astoria-Hallets Point,1 -> 4,4 -> 8,3,False
+QN0103,1,1,3,Astoria (Central),1 -> 1,1 -> 3,2,False
+QN0104,1,1,3,Astoria (East)-Woodside (North),1 -> 1,1 -> 3,2,False
+QN0105,1,2,3,Queensbridge-Ravenswood-Dutch Kills,1 -> 2,2 -> 3,3,False
+QN0201,1,4,6,Long Island City-Hunters Point,1 -> 4,4 -> 6,3,False
+QN0202,8,2,1,Sunnyside,8 -> 2,2 -> 1,3,False
+QN0203,3,1,3,Woodside,3 -> 1,1 -> 3,2,False
+QN0301,8,2,0,Jackson Heights,8 -> 2,2 -> 0,3,False
+QN0302,4,6,4,East Elmhurst,4 -> 6,6 -> 4,2,False
+QN0303,4,6,4,North Corona,4 -> 6,6 -> 4,2,False
+QN0401,8,2,3,Elmhurst,8 -> 2,2 -> 3,3,False
+QN0402,4,2,3,Corona,4 -> 2,2 -> 3,3,False
+QN0501,4,6,3,Maspeth,4 -> 6,6 -> 3,3,False
+QN0502,1,1,3,Ridgewood,1 -> 1,1 -> 3,2,False
+QN0503,1,2,4,Glendale,1 -> 2,2 -> 4,3,False
+QN0504,4,1,0,Middle Village,4 -> 1,1 -> 0,3,False
+QN0601,1,0,1,Rego Park,1 -> 0,0 -> 1,2,False
+QN0602,0,2,1,Forest Hills,0 -> 2,2 -> 1,3,False
+QN0701,7,7,0,College Point,7 -> 7,7 -> 0,2,False
+QN0702,1,7,2,Whitestone-Beechhurst,1 -> 7,7 -> 2,3,False
+QN0703,8,6,1,Bay Terrace-Clearview,8 -> 6,6 -> 1,3,False
+QN0704,3,4,1,Murray Hill-Broadway Flushing,3 -> 4,4 -> 1,3,False
+QN0705,0,0,1,East Flushing,0 -> 0,0 -> 1,2,False
+QN0706,8,6,0,Queensboro Hill,8 -> 6,6 -> 0,3,False
+QN0707,8,1,7,Flushing-Willets Point,8 -> 1,1 -> 7,3,False
+QN0801,0,2,1,Kew Gardens Hills,0 -> 2,2 -> 1,3,False
+QN0802,5,5,5,Pomonok-Electchester-Hillcrest,5 -> 5,5 -> 5,1,True
+QN0803,3,0,8,Fresh Meadows-Utopia,3 -> 0,0 -> 8,3,False
+QN0804,0,4,1,Jamaica Estates-Holliswood,0 -> 4,4 -> 1,3,False
+QN0805,0,2,1,Jamaica Hills-Briarwood,0 -> 2,2 -> 1,3,False
+QN0901,0,2,1,Kew Gardens,0 -> 2,2 -> 1,3,False
+QN0902,4,0,4,Richmond Hill,4 -> 0,0 -> 4,2,False
+QN0903,4,6,4,South Richmond Hill,4 -> 6,6 -> 4,2,False
+QN0904,4,6,0,Ozone Park (North),4 -> 6,6 -> 0,3,False
+QN0905,4,2,4,Woodhaven,4 -> 2,2 -> 4,2,False
+QN1001,4,6,4,South Ozone Park,4 -> 6,6 -> 4,2,False
+QN1002,4,6,4,Ozone Park,4 -> 6,6 -> 4,2,False
+QN1003,4,7,2,Howard Beach-Lindenwood,4 -> 7,7 -> 2,3,False
+QN1101,1,4,0,Auburndale,1 -> 4,4 -> 0,3,False
+QN1102,3,1,3,Bayside,3 -> 1,1 -> 3,2,False
+QN1103,3,4,6,Douglaston-Little Neck,3 -> 4,4 -> 6,3,False
+QN1104,3,-1,8,Oakland Gardens-Hollis Hills,3 -> -1,-1 -> 8,3,False
+QN1201,0,2,3,Jamaica,0 -> 2,2 -> 3,3,False
+QN1202,0,2,1,South Jamaica,0 -> 2,2 -> 1,3,False
+QN1203,4,6,4,Baisley Park,4 -> 6,6 -> 4,2,False
+QN1204,4,6,4,Springfield Gardens (North)-Rochdale Village,4 -> 6,6 -> 4,2,False
+QN1205,4,6,4,St. Albans,4 -> 6,6 -> 4,2,False
+QN1206,0,6,4,Hollis,0 -> 6,6 -> 4,3,False
+QN1301,-1,-1,-1,Glen Oaks-Floral Park-New Hyde Park,-1 -> -1,-1 -> -1,1,True
+QN1302,-1,0,1,Bellerose,-1 -> 0,0 -> 1,3,False
+QN1303,4,6,4,Queens Village,4 -> 6,6 -> 4,2,False
+QN1304,1,1,4,Cambria Heights,1 -> 1,1 -> 4,2,False
+QN1305,4,6,4,Laurelton,4 -> 6,6 -> 4,2,False
+QN1306,4,6,4,Springfield Gardens (South)-Brookville,4 -> 6,6 -> 4,2,False
+QN1307,4,2,4,Rosedale,4 -> 2,2 -> 4,2,False
+QN1401,0,2,1,Far Rockaway-Bayswater,0 -> 2,2 -> 1,3,False
+QN1402,0,2,1,Rockaway Beach-Arverne-Edgemere,0 -> 2,2 -> 1,3,False
+QN1403,0,2,1,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,0 -> 2,2 -> 1,3,False
+SI0101,1,4,3,St. George-New Brighton,1 -> 4,4 -> 3,3,False
+SI0102,0,2,3,Tompkinsville-Stapleton-Clifton-Fox Hills,0 -> 2,2 -> 3,3,False
+SI0103,0,2,1,Rosebank-Shore Acres-Park Hill,0 -> 2,2 -> 1,3,False
+SI0104,0,0,1,West New Brighton-Silver Lake-Grymes Hill,0 -> 0,0 -> 1,2,False
+SI0105,1,0,1,Westerleigh-Castleton Corners,1 -> 0,0 -> 1,2,False
+SI0106,1,2,3,Port Richmond,1 -> 2,2 -> 3,3,False
+SI0107,4,2,3,Mariner's Harbor-Arlington-Graniteville,4 -> 2,2 -> 3,3,False
+SI0201,0,2,1,Grasmere-Arrochar-South Beach-Dongan Hills,0 -> 2,2 -> 1,3,False
+SI0202,3,4,8,New Dorp-Midland Beach,3 -> 4,4 -> 8,3,False
+SI0203,3,0,8,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,3 -> 0,0 -> 8,3,False
+SI0204,4,6,4,New Springville-Willowbrook-Bulls Head-Travis,4 -> 6,6 -> 4,2,False
+SI0301,3,-1,1,Oakwood-Richmondtown,3 -> -1,-1 -> 1,3,False
+SI0302,3,0,8,Great Kills-Eltingville,3 -> 0,0 -> 8,3,False
+SI0303,-1,2,8,Arden Heights-Rossville,-1 -> 2,2 -> 8,3,False
+SI0304,3,2,8,Annadale-Huguenot-Prince's Bay-Woodrow,3 -> 2,2 -> 8,3,False
+SI0305,3,4,8,Tottenville-Charleston,3 -> 4,4 -> 8,3,False

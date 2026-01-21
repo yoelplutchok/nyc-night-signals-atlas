@@ -1,0 +1,158 @@
+{
+  "output_file": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/xwalk/cd_to_tract_weights.parquet",
+  "run_id": "20251216_230258_49dafa3a",
+  "timestamp": "2025-12-16T23:03:03.291328+00:00",
+  "inputs": {
+    "census_tracts": {
+      "path": "https:/data.cityofnewyork.us/resource/63ge-mke6.geojson?$limit=5000",
+      "hash": null,
+      "missing": true
+    },
+    "acs_population": {
+      "path": "https:/api.census.gov/data/2022/acs/acs5?get=B01003_001E&for=tract:*&in=state:36&in=county:005,047,061,081,085",
+      "hash": null,
+      "missing": true
+    },
+    "ntas": {
+      "path": "https:/data.cityofnewyork.us/resource/9nt8-h7nd.geojson?$limit=500",
+      "hash": null,
+      "missing": true
+    },
+    "uhf42": {
+      "path": "https:/raw.githubusercontent.com/nychealth/coronavirus-data/master/Geography-resources/UHF_resources/UHF42.geo.json",
+      "hash": null,
+      "missing": true
+    }
+  },
+  "config_digest": "0ecc844479ed18ed8761644cb72ea1bb073e2d97df6a0d7552564a670bb4dced",
+  "config": {
+    "time_windows": {
+      "primary": {
+        "year_start": 2021,
+        "year_end": 2023,
+        "label": "2021-2023"
+      },
+      "sensitivity": {
+        "year_start": 2022,
+        "year_end": 2023,
+        "label": "2022-2023 (pandemic distortion check)"
+      },
+      "exploratory_2019": {
+        "year_start": 2019,
+        "year_end": 2019,
+        "label": "2019 (pre-pandemic baseline, complaints only)"
+      }
+    },
+    "nighttime": {
+      "primary": {
+        "start_hour": 22,
+        "end_hour": 7,
+        "label": "22:00-07:00"
+      },
+      "sensitivity": {
+        "start_hour": 23,
+        "end_hour": 6,
+        "label": "23:00-06:00"
+      },
+      "timezone": "America/New_York"
+    },
+    "warm_season": {
+      "primary": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "label": "Jun-Aug"
+      },
+      "sensitivity": {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "label": "May-Sep"
+      }
+    },
+    "hot_night_thresholds": {
+      "primary_c": 20.0,
+      "sensitivity_c": 24.0,
+      "percentile": 90
+    },
+    "spatial_join": {
+      "max_distance_ft": 500,
+      "projected_crs": "EPSG:2263",
+      "geographic_crs": "EPSG:4326"
+    },
+    "bounds_checks": {
+      "epsg_4326": {
+        "lon_min": -75.0,
+        "lon_max": -73.0,
+        "lat_min": 40.0,
+        "lat_max": 41.5
+      },
+      "epsg_2263": {
+        "x_min": 900000,
+        "x_max": 1100000,
+        "y_min": 110000,
+        "y_max": 280000
+      }
+    },
+    "noise_311": {
+      "complaint_types": [
+        "Noise - Residential",
+        "Noise - Street/Sidewalk",
+        "Noise - Commercial",
+        "Noise - Vehicle",
+        "Noise - Park",
+        "Noise"
+      ],
+      "subtypes": {
+        "music": [
+          "Loud Music/Party",
+          "Loud Music"
+        ],
+        "construction": [
+          "Construction",
+          "Construction Before/After Hours"
+        ],
+        "traffic": [
+          "Car/Truck Horn",
+          "Car/Truck Music",
+          "Engine Idling"
+        ]
+      }
+    },
+    "raster": {
+      "min_coverage": 0.5,
+      "max_nodata_fraction": 0.3
+    },
+    "crosswalk": {
+      "weight_tolerance": 0.01
+    },
+    "random_seeds": {
+      "bootstrap": 42,
+      "general": 2024
+    }
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  },
+  "versions": {
+    "python": "3.11.14",
+    "geopandas": "1.1.1",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "rasterio": "1.4.4",
+    "pyproj": "3.7.2",
+    "shapely": "2.1.2"
+  },
+  "extra": {
+    "cd_tract_rows": 2321,
+    "cd_nta_rows": 258,
+    "cd_uhf_rows": 200
+  }
+}

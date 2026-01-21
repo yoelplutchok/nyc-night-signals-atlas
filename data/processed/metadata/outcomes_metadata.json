@@ -1,0 +1,19 @@
+{
+  "script": "13_build_outcomes",
+  "run_id": "20260121_142151",
+  "timestamp": "2026-01-21T14:21:54.097051",
+  "inputs": {
+    "cd_clusters": "3b5e588a7ddd257e83c7ab99908546ffcc2f1dd78f2752047a1c866c5ef676ee",
+    "nta_clusters": "459262e9043fdbb4fa64b3a23161cfd6d099ebd6ad1251c539987a8e9ba74c67",
+    "sleep_data": "01ce7b73691a0eb35b401e8ab692b546ea89f80d1f95ae97c54360978bb7f693"
+  },
+  "outputs": {
+    "cd_outcomes": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/outcomes/cd_outcomes.parquet",
+    "nta_outcomes": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/outcomes/nta_outcomes.parquet",
+    "cluster_outcome_summary": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/outcomes/cluster_outcome_summary.csv"
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}

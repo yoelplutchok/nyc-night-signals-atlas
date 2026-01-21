@@ -1,0 +1,5 @@
+metric,value
+n_districts,59
+demographics,"{'poverty_rate': {'mean': 0.1787833358817395, 'std': 0.08772508716483655, 'min': 0.06144193175383111, 'max': 0.3924168306049691}, 'pct_nonhisp_black': {'mean': 0.22999653916270185, 'std': 0.2130183104119874, 'min': 0.007742803239955483, 'max': 0.822121024812988}, 'pct_hispanic': {'mean': 0.301931596774633, 'std': 0.20103066543401063, 'min': 0.07228816873336445, 'max': 0.7347197655928963}, 'rent_burden_rate': {'mean': 0.4970269212154949, 'std': 0.06537285371149389, 'min': 0.33022226516494374, 'max': 0.6047928538056069}}"
+correlations,"{'oesi_poverty': 0.23807206521911192, 'oesi_pct_black': -0.17037251131663914, 'oesi_pct_hispanic': 0.2842683318395196, 'oesi_rent_burden': -0.11365894397525995, 'rdi_obj_noise': 0.11583985283341496}"
+dual_reality,"{'data_deserts': 10, 'neutral': 37, 'conflict_zones': 12}"

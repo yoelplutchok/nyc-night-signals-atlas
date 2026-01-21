@@ -1,0 +1,377 @@
+{
+  "output_file": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/typology/cd_clusters.parquet",
+  "run_id": "20251221_051423_9957957e",
+  "timestamp": "2025-12-21T05:14:24.693786+00:00",
+  "inputs": {
+    "311_cd_features": {
+      "path": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/atlas/311_cd_features.parquet",
+      "hash": "3729c6cc4a4e5e97d846954ebe3e10efe23d3654fa5f02a067aa77c90fbe7eba"
+    }
+  },
+  "config_digest": "a938d23074cd66fa2b0d94b90037c6088fecc422c26e93e8a56f9c62bbf1fe30",
+  "config": {
+    "time_windows": {
+      "primary": {
+        "year_start": 2021,
+        "year_end": 2023,
+        "label": "2021-2023"
+      },
+      "sensitivity": {
+        "year_start": 2022,
+        "year_end": 2023,
+        "label": "2022-2023 (pandemic distortion check)"
+      },
+      "exploratory_2019": {
+        "year_start": 2019,
+        "year_end": 2019,
+        "label": "2019 (pre-pandemic baseline, complaints only)"
+      }
+    },
+    "nighttime": {
+      "primary": {
+        "start_hour": 22,
+        "end_hour": 7,
+        "label": "22:00-07:00"
+      },
+      "sensitivity": {
+        "start_hour": 23,
+        "end_hour": 6,
+        "label": "23:00-06:00"
+      },
+      "timezone": "America/New_York"
+    },
+    "warm_season": {
+      "primary": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "label": "Jun-Aug"
+      },
+      "sensitivity": {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "label": "May-Sep"
+      }
+    },
+    "hot_night_thresholds": {
+      "primary_c": 20.0,
+      "sensitivity_c": 24.0,
+      "percentile": 90
+    },
+    "spatial_join": {
+      "max_distance_ft": 500,
+      "projected_crs": "EPSG:2263",
+      "geographic_crs": "EPSG:4326"
+    },
+    "bounds_checks": {
+      "epsg_4326": {
+        "lon_min": -75.0,
+        "lon_max": -73.0,
+        "lat_min": 40.0,
+        "lat_max": 41.5
+      },
+      "epsg_2263": {
+        "x_min": 900000,
+        "x_max": 1100000,
+        "y_min": 110000,
+        "y_max": 280000
+      }
+    },
+    "noise_311": {
+      "complaint_types": [
+        "Noise - Residential",
+        "Noise - Street/Sidewalk",
+        "Noise - Commercial",
+        "Noise - Vehicle",
+        "Noise - Park",
+        "Noise",
+        "Noise - Helicopter",
+        "Noise - House of Worship"
+      ],
+      "subtypes": {
+        "music": [
+          "Loud Music/Party",
+          "Loud Music"
+        ],
+        "construction": [
+          "Construction",
+          "Construction Before/After Hours"
+        ],
+        "traffic": [
+          "Car/Truck Horn",
+          "Car/Truck Music",
+          "Engine Idling"
+        ]
+      }
+    },
+    "night_bins": {
+      "bins": [
+        {
+          "name": "evening",
+          "start": 22,
+          "end": 24
+        },
+        {
+          "name": "early_am",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "core_night",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "predawn",
+          "start": 4,
+          "end": 7
+        }
+      ],
+      "late_night_hours": [
+        1,
+        2,
+        3
+      ]
+    },
+    "weekend": {
+      "weekend_nights": [
+        4,
+        5
+      ],
+      "weekday_nights": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "raster": {
+      "min_coverage": 0.5,
+      "max_nodata_fraction": 0.3
+    },
+    "crosswalk": {
+      "weight_tolerance": 0.01
+    },
+    "random_seeds": {
+      "bootstrap": 42,
+      "general": 2024,
+      "clustering": 12345
+    },
+    "typology": {
+      "k_range": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "features": [
+        "rate_per_1k_pop",
+        "rate_per_km2",
+        "share_noise___residential",
+        "share_noise___street/sidewalk",
+        "share_noise___commercial",
+        "share_noise___vehicle",
+        "share_noise___park",
+        "share_noise",
+        "share_noise___helicopter",
+        "share_noise___house_of_worship",
+        "share_evening",
+        "share_early_am",
+        "share_core_night",
+        "share_predawn",
+        "late_night_share",
+        "weekend_uplift",
+        "warm_season_ratio"
+      ],
+      "min_silhouette": 0.1,
+      "min_cluster_size": 2,
+      "cluster_labels": {
+        "0": "Street-Dominated Activity",
+        "1": "Weekend-Heavy Residential",
+        "2": "Helicopter Corridor",
+        "3": "Airport-Adjacent (Outlier)",
+        "4": "Low-Intensity Baseline",
+        "5": "Residential-Dominated Outlier",
+        "6": "Evening Street Activity",
+        "7": "Nightlife & Entertainment",
+        "8": "Park-Influenced Outlier"
+      },
+      "outlier_clusters": [
+        3,
+        5,
+        8
+      ]
+    }
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  },
+  "versions": {
+    "python": "3.11.14",
+    "geopandas": "1.1.1",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "rasterio": "1.4.4",
+    "pyproj": "3.7.2",
+    "shapely": "2.1.2"
+  },
+  "extra": {
+    "selected_k": 9,
+    "silhouette_score": 0.21942860887373264,
+    "features_used": [
+      "rate_per_1k_pop",
+      "rate_per_km2",
+      "share_noise___residential",
+      "share_noise___street/sidewalk",
+      "share_noise___commercial",
+      "share_noise___vehicle",
+      "share_noise___park",
+      "share_noise",
+      "share_noise___helicopter",
+      "share_noise___house_of_worship",
+      "share_evening",
+      "share_early_am",
+      "share_core_night",
+      "share_predawn",
+      "late_night_share",
+      "weekend_uplift",
+      "warm_season_ratio"
+    ],
+    "random_seed": 12345,
+    "reproducibility_verified": true,
+    "k_scores": [
+      {
+        "k": 5,
+        "silhouette_score": 0.1990349585702873,
+        "calinski_harabasz_score": 17.11713155743357,
+        "inertia": 442.2524028614458,
+        "cluster_size_min": 1,
+        "cluster_size_max": 28,
+        "cluster_size_std": 10.342146779078318
+      },
+      {
+        "k": 6,
+        "silhouette_score": 0.19367832429110413,
+        "calinski_harabasz_score": 17.224527179657052,
+        "inertia": 382.1017310142497,
+        "cluster_size_min": 1,
+        "cluster_size_max": 20,
+        "cluster_size_std": 6.938219432166216
+      },
+      {
+        "k": 7,
+        "silhouette_score": 0.2019445261642367,
+        "calinski_harabasz_score": 16.69885595345575,
+        "inertia": 342.69613904074623,
+        "cluster_size_min": 1,
+        "cluster_size_max": 17,
+        "cluster_size_std": 5.900536122303824
+      },
+      {
+        "k": 8,
+        "silhouette_score": 0.21791222159159948,
+        "calinski_harabasz_score": 16.329868471418663,
+        "inertia": 309.4385391088525,
+        "cluster_size_min": 1,
+        "cluster_size_max": 16,
+        "cluster_size_std": 5.452923527796809
+      },
+      {
+        "k": 9,
+        "silhouette_score": 0.21942860887373264,
+        "calinski_harabasz_score": 16.581190266843844,
+        "inertia": 274.5695658760144,
+        "cluster_size_min": 1,
+        "cluster_size_max": 20,
+        "cluster_size_std": 6.701759488888987
+      }
+    ],
+    "cluster_sizes": {
+      "0": 5,
+      "1": 20,
+      "2": 4,
+      "3": 1,
+      "4": 17,
+      "5": 1,
+      "6": 3,
+      "7": 7,
+      "8": 1
+    },
+    "distinguishing_features": {
+      "0": [
+        "share_noise___street/sidewalk (high)",
+        "rate_per_km2 (high)",
+        "share_noise (low)"
+      ],
+      "1": [
+        "weekend_uplift (high)",
+        "share_core_night (low)",
+        "share_evening (high)"
+      ],
+      "2": [
+        "share_noise___helicopter (high)",
+        "share_noise___residential (low)",
+        "share_early_am (low)"
+      ],
+      "3": [
+        "share_noise___house_of_worship (high)",
+        "share_noise___vehicle (high)",
+        "share_predawn (high)"
+      ],
+      "4": [
+        "rate_per_km2 (low)",
+        "rate_per_1k_pop (low)",
+        "share_noise (high)"
+      ],
+      "5": [
+        "rate_per_1k_pop (high)",
+        "share_noise___residential (high)",
+        "warm_season_ratio (high)"
+      ],
+      "6": [
+        "share_noise___street/sidewalk (high)",
+        "share_core_night (low)",
+        "share_evening (high)"
+      ],
+      "7": [
+        "share_noise (high)",
+        "share_core_night (high)",
+        "late_night_share (high)"
+      ],
+      "8": [
+        "share_noise___park (high)",
+        "share_noise___commercial (high)",
+        "rate_per_km2 (low)"
+      ]
+    },
+    "qa_stats": {
+      "row_count": 59,
+      "null_cluster_ids": 0,
+      "cluster_ids_in_valid_range": "True",
+      "cluster_sizes": {
+        "0": 5,
+        "1": 20,
+        "2": 4,
+        "3": 1,
+        "4": 17,
+        "5": 1,
+        "6": 3,
+        "7": 7,
+        "8": 1
+      },
+      "min_cluster_size": 1,
+      "null_cd_labels": 0,
+      "passed": true
+    }
+  }
+}

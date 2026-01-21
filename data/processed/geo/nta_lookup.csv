@@ -1,0 +1,263 @@
+ntacode,nta_name,borough_code,borough_name,ntatype,ntaabbrev,ntatype_label,is_residential,nta_short
+BK0101,Greenpoint,3,Brooklyn,0,Grnpt,Residential/Mixed,True,BK-BK0101
+BK0102,Williamsburg,3,Brooklyn,0,Wllmsbrg,Residential/Mixed,True,BK-BK0102
+BK0103,South Williamsburg,3,Brooklyn,0,SWllmsbrg,Residential/Mixed,True,BK-BK0103
+BK0104,East Williamsburg,3,Brooklyn,0,EWllmsbrg,Residential/Mixed,True,BK-BK0104
+BK0201,Brooklyn Heights,3,Brooklyn,0,BkHts,Residential/Mixed,True,BK-BK0201
+BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,3,Brooklyn,0,DwntwnBk,Residential/Mixed,True,BK-BK0202
+BK0203,Fort Greene,3,Brooklyn,0,FtGrn,Residential/Mixed,True,BK-BK0203
+BK0204,Clinton Hill,3,Brooklyn,0,ClntnHl,Residential/Mixed,True,BK-BK0204
+BK0261,Brooklyn Navy Yard,3,Brooklyn,6,BkNvyYrd,Industrial/Transportation,False,BK-BK0261
+BK0301,Bedford-Stuyvesant (West),3,Brooklyn,0,BdSty_W,Residential/Mixed,True,BK-BK0301
+BK0302,Bedford-Stuyvesant (East),3,Brooklyn,0,BdSty_E,Residential/Mixed,True,BK-BK0302
+BK0401,Bushwick (West),3,Brooklyn,0,Bshwck_W,Residential/Mixed,True,BK-BK0401
+BK0402,Bushwick (East),3,Brooklyn,0,Bshwck_E,Residential/Mixed,True,BK-BK0402
+BK0471,The Evergreens Cemetery,3,Brooklyn,7,EvrgrnsCem,Airport,False,BK-BK0471
+BK0501,Cypress Hills,3,Brooklyn,0,CyprssHls,Residential/Mixed,True,BK-BK0501
+BK0502,East New York (North),3,Brooklyn,0,ENY_N,Residential/Mixed,True,BK-BK0502
+BK0503,East New York-New Lots,3,Brooklyn,0,ENY_NwLts,Residential/Mixed,True,BK-BK0503
+BK0504,Spring Creek-Starrett City,3,Brooklyn,0,SpCrk_StrC,Residential/Mixed,True,BK-BK0504
+BK0505,East New York-City Line,3,Brooklyn,0,ENY_CtyLn,Residential/Mixed,True,BK-BK0505
+BK0571,Highland Park-Cypress Hills Cemeteries (South),3,Brooklyn,7,CyHlsCem_S,Airport,False,BK-BK0571
+BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,3,Brooklyn,0,CrrllGrdns,Residential/Mixed,True,BK-BK0601
+BK0602,Park Slope,3,Brooklyn,0,PkSlp,Residential/Mixed,True,BK-BK0602
+BK0701,Windsor Terrace-South Slope,3,Brooklyn,0,WndsrTr,Residential/Mixed,True,BK-BK0701
+BK0702,Sunset Park (West),3,Brooklyn,0,SnstPk_W,Residential/Mixed,True,BK-BK0702
+BK0703,Sunset Park (Central),3,Brooklyn,0,SnstPk_C,Residential/Mixed,True,BK-BK0703
+BK0771,Green-Wood Cemetery,3,Brooklyn,7,GrnWdCem,Airport,False,BK-BK0771
+BK0801,Prospect Heights,3,Brooklyn,0,PrspctHts,Residential/Mixed,True,BK-BK0801
+BK0802,Crown Heights (North),3,Brooklyn,0,CrwnHts_N,Residential/Mixed,True,BK-BK0802
+BK0891,Lincoln Terrace Park,3,Brooklyn,9,LclnTrPk,Park/Recreation,False,BK-BK0891
+BK0901,Crown Heights (South),3,Brooklyn,0,CrwnHts_S,Residential/Mixed,True,BK-BK0901
+BK0902,Prospect Lefferts Gardens-Wingate,3,Brooklyn,0,PLG_Wngt,Residential/Mixed,True,BK-BK0902
+BK1001,Bay Ridge,3,Brooklyn,0,ByRdg,Residential/Mixed,True,BK-BK1001
+BK1002,Dyker Heights,3,Brooklyn,0,DykrHts,Residential/Mixed,True,BK-BK1002
+BK1061,Fort Hamilton,3,Brooklyn,6,FtHmltn,Industrial/Transportation,False,BK-BK1061
+BK1091,Dyker Beach Park,3,Brooklyn,9,DykrBchPk,Park/Recreation,False,BK-BK1091
+BK1101,Bensonhurst,3,Brooklyn,0,Bnsnhrst,Residential/Mixed,True,BK-BK1101
+BK1102,Bath Beach,3,Brooklyn,0,BthBch,Residential/Mixed,True,BK-BK1102
+BK1103,Gravesend (West),3,Brooklyn,0,Grvsnd_W,Residential/Mixed,True,BK-BK1103
+BK1201,Sunset Park (East)-Borough Park (West),3,Brooklyn,0,SnstPk_E,Residential/Mixed,True,BK-BK1201
+BK1202,Borough Park,3,Brooklyn,0,BoroPk,Residential/Mixed,True,BK-BK1202
+BK1203,Kensington,3,Brooklyn,0,Knsngtn,Residential/Mixed,True,BK-BK1203
+BK1204,Mapleton-Midwood (West),3,Brooklyn,0,Mpltn,Residential/Mixed,True,BK-BK1204
+BK1301,Gravesend (South),3,Brooklyn,0,Grvsnd_S,Residential/Mixed,True,BK-BK1301
+BK1302,Coney Island-Sea Gate,3,Brooklyn,0,CnyIsl,Residential/Mixed,True,BK-BK1302
+BK1303,Brighton Beach,3,Brooklyn,0,BrghtnBch,Residential/Mixed,True,BK-BK1303
+BK1391,Calvert Vaux Park,3,Brooklyn,9,ClvrtVxPk,Park/Recreation,False,BK-BK1391
+BK1401,Flatbush,3,Brooklyn,0,Fltbsh,Residential/Mixed,True,BK-BK1401
+BK1402,Flatbush (West)-Ditmas Park-Parkville,3,Brooklyn,0,Fltbsh_W,Residential/Mixed,True,BK-BK1402
+BK1403,Midwood,3,Brooklyn,0,Mdwd,Residential/Mixed,True,BK-BK1403
+BK1501,Gravesend (East)-Homecrest,3,Brooklyn,0,Grvsnd_E,Residential/Mixed,True,BK-BK1501
+BK1502,Madison,3,Brooklyn,0,Mdsn,Residential/Mixed,True,BK-BK1502
+BK1503,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,3,Brooklyn,0,ShpshdBy,Residential/Mixed,True,BK-BK1503
+BK1601,Ocean Hill,3,Brooklyn,0,OcnHl,Residential/Mixed,True,BK-BK1601
+BK1602,Brownsville,3,Brooklyn,0,Brwnsvl,Residential/Mixed,True,BK-BK1602
+BK1701,East Flatbush-Erasmus,3,Brooklyn,0,EFb_Ersms,Residential/Mixed,True,BK-BK1701
+BK1702,East Flatbush-Farragut,3,Brooklyn,0,EFb_Frrgt,Residential/Mixed,True,BK-BK1702
+BK1703,East Flatbush-Rugby,3,Brooklyn,0,EFb_Rgby,Residential/Mixed,True,BK-BK1703
+BK1704,East Flatbush-Remsen Village,3,Brooklyn,0,EFb_RmsnVl,Residential/Mixed,True,BK-BK1704
+BK1771,Holy Cross Cemetery,3,Brooklyn,7,HlyCrssCem,Airport,False,BK-BK1771
+BK1801,Flatlands,3,Brooklyn,0,Fltlnds,Residential/Mixed,True,BK-BK1801
+BK1802,Marine Park-Mill Basin-Bergen Beach,3,Brooklyn,0,MrnPk_MBsn,Residential/Mixed,True,BK-BK1802
+BK1803,Canarsie,3,Brooklyn,0,Cnrsie,Residential/Mixed,True,BK-BK1803
+BK1891,Marine Park-Plumb Island,3,Brooklyn,9,MrnPk_PIsl,Park/Recreation,False,BK-BK1891
+BK1892,McGuire Fields,3,Brooklyn,9,McGrFlds,Park/Recreation,False,BK-BK1892
+BK1893,Canarsie Park & Pier,3,Brooklyn,9,CnrsiePk,Park/Recreation,False,BK-BK1893
+BK5591,Prospect Park,3,Brooklyn,9,PrspctPk,Park/Recreation,False,BK-BK5591
+BK5691,Barren Island-Floyd Bennett Field,3,Brooklyn,9,BrrnIsl,Park/Recreation,False,BK-BK5691
+BK5692,Jamaica Bay (West),3,Brooklyn,9,JmcaBy_W,Park/Recreation,False,BK-BK5692
+BK5693,Shirley Chisholm State Park,3,Brooklyn,9,ShChshlmPk,Park/Recreation,False,BK-BK5693
+BX0101,Mott Haven-Port Morris,2,Bronx,0,MttHvn,Residential/Mixed,True,BX-BX0101
+BX0102,Melrose,2,Bronx,0,Mlrs,Residential/Mixed,True,BX-BX0102
+BX0201,Hunts Point,2,Bronx,0,HntsPt,Residential/Mixed,True,BX-BX0201
+BX0202,Longwood,2,Bronx,0,Lngwd,Residential/Mixed,True,BX-BX0202
+BX0291,North & South Brother Islands,2,Bronx,9,BrthrIsls,Park/Recreation,False,BX-BX0291
+BX0301,Morrisania,2,Bronx,0,Mrrsnia,Residential/Mixed,True,BX-BX0301
+BX0302,Claremont Village-Claremont (East),2,Bronx,0,ClrmntVlg,Residential/Mixed,True,BX-BX0302
+BX0303,Crotona Park East,2,Bronx,0,CrtnaPkEst,Residential/Mixed,True,BX-BX0303
+BX0391,Crotona Park,2,Bronx,9,CrtnaPk,Park/Recreation,False,BX-BX0391
+BX0401,Concourse-Concourse Village,2,Bronx,0,Cncrs,Residential/Mixed,True,BX-BX0401
+BX0402,Highbridge,2,Bronx,0,Hghbrdg,Residential/Mixed,True,BX-BX0402
+BX0403,Mount Eden-Claremont (West),2,Bronx,0,MtEdn,Residential/Mixed,True,BX-BX0403
+BX0491,Yankee Stadium-Macombs Dam Park,2,Bronx,9,YnkStdm,Park/Recreation,False,BX-BX0491
+BX0492,Claremont Park,2,Bronx,9,ClrmntPk,Park/Recreation,False,BX-BX0492
+BX0501,University Heights (South)-Morris Heights,2,Bronx,0,UnvrsHts_S,Residential/Mixed,True,BX-BX0501
+BX0502,Mount Hope,2,Bronx,0,MtHp,Residential/Mixed,True,BX-BX0502
+BX0503,Fordham Heights,2,Bronx,0,FrdhmHts,Residential/Mixed,True,BX-BX0503
+BX0601,West Farms,2,Bronx,0,WstFrms,Residential/Mixed,True,BX-BX0601
+BX0602,Tremont,2,Bronx,0,Trmnt,Residential/Mixed,True,BX-BX0602
+BX0603,Belmont,2,Bronx,0,Blmnt,Residential/Mixed,True,BX-BX0603
+BX0701,University Heights (North)-Fordham,2,Bronx,0,UnvrsHts_N,Residential/Mixed,True,BX-BX0701
+BX0702,Bedford Park,2,Bronx,0,BdfrdPk,Residential/Mixed,True,BX-BX0702
+BX0703,Norwood,2,Bronx,0,Nrwd,Residential/Mixed,True,BX-BX0703
+BX0801,Kingsbridge Heights-Van Cortlandt Village,2,Bronx,0,KngbrdgHts,Residential/Mixed,True,BX-BX0801
+BX0802,Kingsbridge-Marble Hill,2,Bronx,0,Kngbrdg,Residential/Mixed,True,BX-BX0802
+BX0803,Riverdale-Spuyten Duyvil,2,Bronx,0,Rvrdl,Residential/Mixed,True,BX-BX0803
+BX0901,Soundview-Bruckner-Bronx River,2,Bronx,0,Sdvw_BxRvr,Residential/Mixed,True,BX-BX0901
+BX0902,Soundview-Clason Point,2,Bronx,0,Sdvw_ClsPt,Residential/Mixed,True,BX-BX0902
+BX0903,Castle Hill-Unionport,2,Bronx,0,CstlHl,Residential/Mixed,True,BX-BX0903
+BX0904,Parkchester,2,Bronx,0,Pkchstr,Residential/Mixed,True,BX-BX0904
+BX0991,Soundview Park,2,Bronx,9,SdvwPk,Park/Recreation,False,BX-BX0991
+BX1001,Westchester Square,2,Bronx,0,WstchstrSq,Residential/Mixed,True,BX-BX1001
+BX1002,Throgs Neck-Schuylerville,2,Bronx,0,ThrgsNck,Residential/Mixed,True,BX-BX1002
+BX1003,Pelham Bay-Country Club-City Island,2,Bronx,0,PlhmBy,Residential/Mixed,True,BX-BX1003
+BX1004,Co-op City,2,Bronx,0,CoopCty,Residential/Mixed,True,BX-BX1004
+BX1071,Hart Island,2,Bronx,7,HrtIsl,Airport,False,BX-BX1071
+BX1091,Ferry Point Park-St. Raymond Cemetery,2,Bronx,9,FrryPtPk,Park/Recreation,False,BX-BX1091
+BX1101,Pelham Parkway-Van Nest,2,Bronx,0,PlhmPkwy,Residential/Mixed,True,BX-BX1101
+BX1102,Morris Park,2,Bronx,0,MrrsPk,Residential/Mixed,True,BX-BX1102
+BX1103,Pelham Gardens,2,Bronx,0,PlhmGrdns,Residential/Mixed,True,BX-BX1103
+BX1104,Allerton,2,Bronx,0,Allrtn,Residential/Mixed,True,BX-BX1104
+BX1161,Hutchinson Metro Center,2,Bronx,6,HtchMtrCtr,Industrial/Transportation,False,BX-BX1161
+BX1201,Williamsbridge-Olinville,2,Bronx,0,Wllmsbrdg,Residential/Mixed,True,BX-BX1201
+BX1202,Eastchester-Edenwald-Baychester,2,Bronx,0,Estchstr,Residential/Mixed,True,BX-BX1202
+BX1203,Wakefield-Woodlawn,2,Bronx,0,Wkfld_Wdln,Residential/Mixed,True,BX-BX1203
+BX1271,Woodlawn Cemetery,2,Bronx,7,WdlnCem,Airport,False,BX-BX1271
+BX2691,Van Cortlandt Park,2,Bronx,9,VnCrtldtPk,Park/Recreation,False,BX-BX2691
+BX2791,Bronx Park,2,Bronx,9,BxPk,Park/Recreation,False,BX-BX2791
+BX2891,Pelham Bay Park,2,Bronx,9,PlhmByPk,Park/Recreation,False,BX-BX2891
+MN0101,Financial District-Battery Park City,1,Manhattan,0,FiDi,Residential/Mixed,True,MN-MN0101
+MN0102,Tribeca-Civic Center,1,Manhattan,0,TriBeCa,Residential/Mixed,True,MN-MN0102
+MN0191,The Battery-Governors Island-Ellis Island-Liberty Island,1,Manhattan,9,Btry_GvIsl,Park/Recreation,False,MN-MN0191
+MN0201,SoHo-Little Italy-Hudson Square,1,Manhattan,0,SoHo,Residential/Mixed,True,MN-MN0201
+MN0202,Greenwich Village,1,Manhattan,0,GrnwchVlg,Residential/Mixed,True,MN-MN0202
+MN0203,West Village,1,Manhattan,0,WstVlg,Residential/Mixed,True,MN-MN0203
+MN0301,Chinatown-Two Bridges,1,Manhattan,0,Chntwn,Residential/Mixed,True,MN-MN0301
+MN0302,Lower East Side,1,Manhattan,0,LES,Residential/Mixed,True,MN-MN0302
+MN0303,East Village,1,Manhattan,0,EstVlg,Residential/Mixed,True,MN-MN0303
+MN0401,Chelsea-Hudson Yards,1,Manhattan,0,Chls_HdsYd,Residential/Mixed,True,MN-MN0401
+MN0402,Hell's Kitchen,1,Manhattan,0,HllsKtchn,Residential/Mixed,True,MN-MN0402
+MN0501,Midtown South-Flatiron-Union Square,1,Manhattan,0,MdtwnSth,Residential/Mixed,True,MN-MN0501
+MN0502,Midtown-Times Square,1,Manhattan,0,Mdtwn_TmSq,Residential/Mixed,True,MN-MN0502
+MN0601,Stuyvesant Town-Peter Cooper Village,1,Manhattan,0,StyTwn,Residential/Mixed,True,MN-MN0601
+MN0602,Gramercy,1,Manhattan,0,Grmrcy,Residential/Mixed,True,MN-MN0602
+MN0603,Murray Hill-Kips Bay,1,Manhattan,0,MryHl_KpBy,Residential/Mixed,True,MN-MN0603
+MN0604,East Midtown-Turtle Bay,1,Manhattan,0,EstMdtwn,Residential/Mixed,True,MN-MN0604
+MN0661,United Nations,1,Manhattan,6,UN,Industrial/Transportation,False,MN-MN0661
+MN0701,Upper West Side-Lincoln Square,1,Manhattan,0,UWS_LclnSq,Residential/Mixed,True,MN-MN0701
+MN0702,Upper West Side (Central),1,Manhattan,0,UWS_C,Residential/Mixed,True,MN-MN0702
+MN0703,Upper West Side-Manhattan Valley,1,Manhattan,0,UWS_MnVly,Residential/Mixed,True,MN-MN0703
+MN0801,Upper East Side-Lenox Hill-Roosevelt Island,1,Manhattan,0,UES_LnxHl,Residential/Mixed,True,MN-MN0801
+MN0802,Upper East Side-Carnegie Hill,1,Manhattan,0,UES_CrngHl,Residential/Mixed,True,MN-MN0802
+MN0803,Upper East Side-Yorkville,1,Manhattan,0,UES_Yrkvl,Residential/Mixed,True,MN-MN0803
+MN0901,Morningside Heights,1,Manhattan,0,MrngsdHts,Residential/Mixed,True,MN-MN0901
+MN0902,Manhattanville-West Harlem,1,Manhattan,0,Mnhttnvl,Residential/Mixed,True,MN-MN0902
+MN0903,Hamilton Heights-Sugar Hill,1,Manhattan,0,HmltnHts,Residential/Mixed,True,MN-MN0903
+MN1001,Harlem (South),1,Manhattan,0,Hrlm_S,Residential/Mixed,True,MN-MN1001
+MN1002,Harlem (North),1,Manhattan,0,Hrlm_N,Residential/Mixed,True,MN-MN1002
+MN1101,East Harlem (South),1,Manhattan,0,EstHrlm_S,Residential/Mixed,True,MN-MN1101
+MN1102,East Harlem (North),1,Manhattan,0,EstHrlm_N,Residential/Mixed,True,MN-MN1102
+MN1191,Randall's Island,1,Manhattan,9,RndllsIsl,Park/Recreation,False,MN-MN1191
+MN1201,Washington Heights (South),1,Manhattan,0,WshHts_S,Residential/Mixed,True,MN-MN1201
+MN1202,Washington Heights (North),1,Manhattan,0,WshHts_N,Residential/Mixed,True,MN-MN1202
+MN1203,Inwood,1,Manhattan,0,Inwd,Residential/Mixed,True,MN-MN1203
+MN1291,Highbridge Park,1,Manhattan,9,HghbrdgPk,Park/Recreation,False,MN-MN1291
+MN1292,Inwood Hill Park,1,Manhattan,9,InwdHlPk,Park/Recreation,False,MN-MN1292
+MN6491,Central Park,1,Manhattan,9,CntrlPk,Park/Recreation,False,MN-MN6491
+QN0101,Astoria (North)-Ditmars-Steinway,4,Queens,0,Astr_N,Residential/Mixed,True,QN-QN0101
+QN0102,Old Astoria-Hallets Point,4,Queens,0,OldAstr,Residential/Mixed,True,QN-QN0102
+QN0103,Astoria (Central),4,Queens,0,Astr_C,Residential/Mixed,True,QN-QN0103
+QN0104,Astoria (East)-Woodside (North),4,Queens,0,Astr_E,Residential/Mixed,True,QN-QN0104
+QN0105,Queensbridge-Ravenswood-Dutch Kills,4,Queens,0,Qnsbrdg,Residential/Mixed,True,QN-QN0105
+QN0151,Rikers Island,2,Bronx,5,RkrsIsl,Rikers Island,False,BX-QN0151
+QN0161,Sunnyside Yards (North),4,Queens,6,SnnysdYd_N,Industrial/Transportation,False,QN-QN0161
+QN0171,St. Michael's Cemetery,4,Queens,7,StMchlCem,Airport,False,QN-QN0171
+QN0191,Astoria Park,4,Queens,9,AstrPk,Park/Recreation,False,QN-QN0191
+QN0201,Long Island City-Hunters Point,4,Queens,0,LIC,Residential/Mixed,True,QN-QN0201
+QN0202,Sunnyside,4,Queens,0,Snnysd,Residential/Mixed,True,QN-QN0202
+QN0203,Woodside,4,Queens,0,Wdsd,Residential/Mixed,True,QN-QN0203
+QN0261,Sunnyside Yards (South),4,Queens,6,SnnysdYd_S,Industrial/Transportation,False,QN-QN0261
+QN0271,Calvary & Mount Zion Cemeteries,4,Queens,7,ClvryCem,Airport,False,QN-QN0271
+QN0301,Jackson Heights,4,Queens,0,JcksnHts,Residential/Mixed,True,QN-QN0301
+QN0302,East Elmhurst,4,Queens,0,EstElmhrst,Residential/Mixed,True,QN-QN0302
+QN0303,North Corona,4,Queens,0,NrthCrna,Residential/Mixed,True,QN-QN0303
+QN0401,Elmhurst,4,Queens,0,Elmhrst,Residential/Mixed,True,QN-QN0401
+QN0402,Corona,4,Queens,0,Crna,Residential/Mixed,True,QN-QN0402
+QN0501,Maspeth,4,Queens,0,Mspth,Residential/Mixed,True,QN-QN0501
+QN0502,Ridgewood,4,Queens,0,Rdgwd,Residential/Mixed,True,QN-QN0502
+QN0503,Glendale,4,Queens,0,Glndl,Residential/Mixed,True,QN-QN0503
+QN0504,Middle Village,4,Queens,0,MddlVlg,Residential/Mixed,True,QN-QN0504
+QN0571,Mount Olivet & All Faiths Cemeteries,4,Queens,7,MtOlvtCem,Airport,False,QN-QN0571
+QN0572,Middle Village Cemetery,4,Queens,7,MddlVlgCem,Airport,False,QN-QN0572
+QN0573,St. John Cemetery,4,Queens,7,StJhnCem,Airport,False,QN-QN0573
+QN0574,Highland Park-Cypress Hills Cemeteries (North),4,Queens,7,CyHlsCem_N,Airport,False,QN-QN0574
+QN0601,Rego Park,4,Queens,0,RegoPk,Residential/Mixed,True,QN-QN0601
+QN0602,Forest Hills,4,Queens,0,FrstHls,Residential/Mixed,True,QN-QN0602
+QN0701,College Point,4,Queens,0,CllgPt,Residential/Mixed,True,QN-QN0701
+QN0702,Whitestone-Beechhurst,4,Queens,0,Whtstn,Residential/Mixed,True,QN-QN0702
+QN0703,Bay Terrace-Clearview,4,Queens,0,ByTr_Clrvw,Residential/Mixed,True,QN-QN0703
+QN0704,Murray Hill-Broadway Flushing,4,Queens,0,MryHl_BwyF,Residential/Mixed,True,QN-QN0704
+QN0705,East Flushing,4,Queens,0,EstFlshng,Residential/Mixed,True,QN-QN0705
+QN0706,Queensboro Hill,4,Queens,0,QnsboroHl,Residential/Mixed,True,QN-QN0706
+QN0707,Flushing-Willets Point,4,Queens,0,Flshng,Residential/Mixed,True,QN-QN0707
+QN0761,Fort Totten,4,Queens,6,FtTttn,Industrial/Transportation,False,QN-QN0761
+QN0791,Kissena Park,4,Queens,9,KssnPk,Park/Recreation,False,QN-QN0791
+QN0801,Kew Gardens Hills,4,Queens,0,KwGrdnsHls,Residential/Mixed,True,QN-QN0801
+QN0802,Pomonok-Electchester-Hillcrest,4,Queens,0,Pmnk_Hlcst,Residential/Mixed,True,QN-QN0802
+QN0803,Fresh Meadows-Utopia,4,Queens,0,FrshMdws,Residential/Mixed,True,QN-QN0803
+QN0804,Jamaica Estates-Holliswood,4,Queens,0,JmcaEstts,Residential/Mixed,True,QN-QN0804
+QN0805,Jamaica Hills-Briarwood,4,Queens,0,JmcaHls,Residential/Mixed,True,QN-QN0805
+QN0871,Mount Hebron & Cedar Grove Cemeteries,4,Queens,7,MtHbrnCem,Airport,False,QN-QN0871
+QN0891,Cunningham Park,4,Queens,9,CnnghmPk,Park/Recreation,False,QN-QN0891
+QN0901,Kew Gardens,4,Queens,0,KwGrdns,Residential/Mixed,True,QN-QN0901
+QN0902,Richmond Hill,4,Queens,0,RchmdHl,Residential/Mixed,True,QN-QN0902
+QN0903,South Richmond Hill,4,Queens,0,SthRchmdHl,Residential/Mixed,True,QN-QN0903
+QN0904,Ozone Park (North),4,Queens,0,OznPk_N,Residential/Mixed,True,QN-QN0904
+QN0905,Woodhaven,4,Queens,0,Wdhvn,Residential/Mixed,True,QN-QN0905
+QN1001,South Ozone Park,4,Queens,0,SthOznPk,Residential/Mixed,True,QN-QN1001
+QN1002,Ozone Park,4,Queens,0,OznPk,Residential/Mixed,True,QN-QN1002
+QN1003,Howard Beach-Lindenwood,4,Queens,0,HwrdBch,Residential/Mixed,True,QN-QN1003
+QN1091,Spring Creek Park,4,Queens,9,SpCrkPk,Park/Recreation,False,QN-QN1091
+QN1101,Auburndale,4,Queens,0,Abrndl,Residential/Mixed,True,QN-QN1101
+QN1102,Bayside,4,Queens,0,Bysd,Residential/Mixed,True,QN-QN1102
+QN1103,Douglaston-Little Neck,4,Queens,0,Dglstn,Residential/Mixed,True,QN-QN1103
+QN1104,Oakland Gardens-Hollis Hills,4,Queens,0,OklndGrdns,Residential/Mixed,True,QN-QN1104
+QN1191,Alley Pond Park,4,Queens,9,AllyPndPk,Park/Recreation,False,QN-QN1191
+QN1201,Jamaica,4,Queens,0,Jmca,Residential/Mixed,True,QN-QN1201
+QN1202,South Jamaica,4,Queens,0,SthJmca,Residential/Mixed,True,QN-QN1202
+QN1203,Baisley Park,4,Queens,0,BslyPk,Residential/Mixed,True,QN-QN1203
+QN1204,Springfield Gardens (North)-Rochdale Village,4,Queens,0,SpfGrdns_N,Residential/Mixed,True,QN-QN1204
+QN1205,St. Albans,4,Queens,0,StAlbns,Residential/Mixed,True,QN-QN1205
+QN1206,Hollis,4,Queens,0,Hlls,Residential/Mixed,True,QN-QN1206
+QN1301,Glen Oaks-Floral Park-New Hyde Park,4,Queens,0,GlnOks,Residential/Mixed,True,QN-QN1301
+QN1302,Bellerose,4,Queens,0,Bllrs,Residential/Mixed,True,QN-QN1302
+QN1303,Queens Village,4,Queens,0,QnsVlg,Residential/Mixed,True,QN-QN1303
+QN1304,Cambria Heights,4,Queens,0,CmbriaHts,Residential/Mixed,True,QN-QN1304
+QN1305,Laurelton,4,Queens,0,Lrltn,Residential/Mixed,True,QN-QN1305
+QN1306,Springfield Gardens (South)-Brookville,4,Queens,0,SpfGrdns_S,Residential/Mixed,True,QN-QN1306
+QN1307,Rosedale,4,Queens,0,Rsdl,Residential/Mixed,True,QN-QN1307
+QN1371,Montefiore Cemetery,4,Queens,7,MntfrCem,Airport,False,QN-QN1371
+QN1401,Far Rockaway-Bayswater,4,Queens,0,FrRckwy,Residential/Mixed,True,QN-QN1401
+QN1402,Rockaway Beach-Arverne-Edgemere,4,Queens,0,RckwyBch,Residential/Mixed,True,QN-QN1402
+QN1403,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,4,Queens,0,BrzyPt,Residential/Mixed,True,QN-QN1403
+QN1491,Rockaway Community Park,4,Queens,9,RckwyCPk,Park/Recreation,False,QN-QN1491
+QN8081,LaGuardia Airport,4,Queens,8,LGA,Cemetery,False,QN-QN8081
+QN8191,Flushing Meadows-Corona Park,4,Queens,9,FlshMdwCPk,Park/Recreation,False,QN-QN8191
+QN8291,Forest Park,4,Queens,9,FrstPk,Park/Recreation,False,QN-QN8291
+QN8381,John F. Kennedy International Airport,4,Queens,8,JFK,Cemetery,False,QN-QN8381
+QN8491,Jamaica Bay (East),4,Queens,9,JmcaBy_E,Park/Recreation,False,QN-QN8491
+QN8492,Jacob Riis Park-Fort Tilden-Breezy Point Tip,4,Queens,9,JcbRsPk,Park/Recreation,False,QN-QN8492
+SI0101,St. George-New Brighton,5,Staten Island,0,StGrg,Residential/Mixed,True,SI-SI0101
+SI0102,Tompkinsville-Stapleton-Clifton-Fox Hills,5,Staten Island,0,Tkvl_Stptn,Residential/Mixed,True,SI-SI0102
+SI0103,Rosebank-Shore Acres-Park Hill,5,Staten Island,0,Rsbnk_PkHl,Residential/Mixed,True,SI-SI0103
+SI0104,West New Brighton-Silver Lake-Grymes Hill,5,Staten Island,0,WstNwBrgtn,Residential/Mixed,True,SI-SI0104
+SI0105,Westerleigh-Castleton Corners,5,Staten Island,0,Wstrlgh,Residential/Mixed,True,SI-SI0105
+SI0106,Port Richmond,5,Staten Island,0,PrtRchmnd,Residential/Mixed,True,SI-SI0106
+SI0107,Mariner's Harbor-Arlington-Graniteville,5,Staten Island,0,MrnrsHrbr,Residential/Mixed,True,SI-SI0107
+SI0191,Snug Harbor,5,Staten Island,9,SngHrbr,Park/Recreation,False,SI-SI0191
+SI0201,Grasmere-Arrochar-South Beach-Dongan Hills,5,Staten Island,0,Grsmr_SBch,Residential/Mixed,True,SI-SI0201
+SI0202,New Dorp-Midland Beach,5,Staten Island,0,NwDrp_MBch,Residential/Mixed,True,SI-SI0202
+SI0203,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,5,Staten Island,0,TdtHl,Residential/Mixed,True,SI-SI0203
+SI0204,New Springville-Willowbrook-Bulls Head-Travis,5,Staten Island,0,NwSprngvl,Residential/Mixed,True,SI-SI0204
+SI0291,Freshkills Park (North),5,Staten Island,9,FrshklPk_N,Park/Recreation,False,SI-SI0291
+SI0301,Oakwood-Richmondtown,5,Staten Island,0,Okwd_Rmtwn,Residential/Mixed,True,SI-SI0301
+SI0302,Great Kills-Eltingville,5,Staten Island,0,GrtKls_Evl,Residential/Mixed,True,SI-SI0302
+SI0303,Arden Heights-Rossville,5,Staten Island,0,ArdnHts,Residential/Mixed,True,SI-SI0303
+SI0304,Annadale-Huguenot-Prince's Bay-Woodrow,5,Staten Island,0,Anndl_Wdrw,Residential/Mixed,True,SI-SI0304
+SI0305,Tottenville-Charleston,5,Staten Island,0,Tttnvl,Residential/Mixed,True,SI-SI0305
+SI0391,Freshkills Park (South),5,Staten Island,9,FrshklPK_S,Park/Recreation,False,SI-SI0391
+SI9561,Fort Wadsworth,5,Staten Island,6,FtWdswrth,Industrial/Transportation,False,SI-SI9561
+SI9591,Hoffman & Swinburne Islands,5,Staten Island,9,HffmnIsl,Park/Recreation,False,SI-SI9591
+SI9592,Miller Field,5,Staten Island,9,MllrFld,Park/Recreation,False,SI-SI9592
+SI9593,Great Kills Park,5,Staten Island,9,GrtKlsPk,Park/Recreation,False,SI-SI9593

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Night Signals Atlas (2021-2023)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #ed8936;
+            --accent-hover: #dd6b20;
+            --text-color: #1a202c;
+            --text-muted: #4a5568;
+            --bg-light: #f7fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+            --warning-color: #d69e2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        nav .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0 60px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 700px;
+        }
+
+        .hero .meta {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: -40px 0 48px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Sections */
+        section {
+            padding: 64px 0;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 16px;
+            margin-top: 32px;
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        /* Findings List */
+        .findings-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .findings-list li {
+            padding: 16px 0 16px 32px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .findings-list li:last-child {
+            border-bottom: none;
+        }
+
+        .findings-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .findings-list strong {
+            color: var(--text-color);
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card .tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        tr:hover td {
+            background: var(--bg-light);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid var(--warning-color);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            color: #92400e;
+            margin-bottom: 0;
+        }
+
+        .highlight-box strong {
+            color: #78350f;
+        }
+
+        /* Links */
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 48px 0;
+        }
+
+        footer h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        footer a {
+            color: var(--accent-color);
+        }
+
+        .citation-box {
+            background: rgba(255,255,255,0.1);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 16px 0;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .stat-card .number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Methodology Steps */
+        .method-steps {
+            counter-reset: step;
+        }
+
+        .method-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .method-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .method-step::before {
+            counter-increment: step;
+            content: counter(step);
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .method-step-content h4 {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .method-step-content p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">NYC Night Signals Atlas</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#findings">Findings</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="https://github.com/yoelplutchok/Sleep_ESI_NYC" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>NYC Night Signals Atlas (2021-2023)</h1>
+            <p class="subtitle">
+                A comprehensive analysis of nighttime noise disturbance patterns across New York City's 59 Community Districts, combining 311 complaint data with environmental sensors to map behavioral signatures and identify persistent hotspots.
+            </p>
+            <p class="meta">
+                <strong>Author:</strong> Yoel Y. Plutchok &nbsp;|&nbsp;
+                <strong>Data Period:</strong> January 2021 - December 2023 &nbsp;|&nbsp;
+                <strong>Last Updated:</strong> January 2025
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">405K</div>
+                    <div class="label">Nighttime Complaints</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">59</div>
+                    <div class="label">Community Districts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">9</div>
+                    <div class="label">Behavioral Clusters</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">27x</div>
+                    <div class="label">Rate Disparity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">19</div>
+                    <div class="label">Persistent Hotspots</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>Executive Summary</h2>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>Key Finding:</strong> Nighttime noise complaint rates vary by a factor of 27 across NYC Community Districts,
+                    with the highest-rate district (Bronx CD 12) receiving 259 complaints per 1,000 residents compared to just
+                    9.4 per 1,000 in the lowest-rate district (Staten Island CD 3). This disparity reflects both genuine differences
+                    in nighttime disturbance and significant variation in reporting behavior.
+                </p>
+            </div>
+
+            <div class="two-col">
+                <div>
+                    <h3>Project Scope</h3>
+                    <p>
+                        This project processes over 2.1 million 311 noise complaints from 2021-2023, filtering to 405,226 nighttime
+                        complaints (22:00-07:00), and combines them with environmental sensor data including modeled transportation
+                        noise (BTS), satellite light pollution (VIIRS), nighttime temperature (PRISM), and air quality (NYCCAS).
+                    </p>
+                    <p>
+                        The analysis produces four primary outputs: a Night Noise Atlas with CD-level metrics, a behavioral
+                        typology based on complaint patterns, a hotspot concentration analysis at 250m grid resolution, and
+                        a heat sensitivity model linking temperature to complaint rates.
+                    </p>
+                </div>
+                <div>
+                    <h3>Why This Matters</h3>
+                    <p>
+                        Understanding nighttime noise patterns is essential for urban planning, public health, and environmental
+                        justice. Chronic noise exposure during sleep hours is associated with cardiovascular disease, cognitive
+                        impairment, and reduced quality of life.
+                    </p>
+                    <p>
+                        By combining reported complaints with objective environmental measures, this analysis distinguishes
+                        between areas with high disturbance and high reporting propensity, identifying both "data deserts"
+                        (under-reporting) and "conflict zones" (over-reporting relative to measured exposure).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="findings">
+        <div class="container">
+            <h2>Principal Findings</h2>
+
+            <h3>1. Extreme Geographic Concentration</h3>
+            <ul class="findings-list">
+                <li>
+                    <strong>The top 10 CDs by complaint rate account for 45% of all nighttime noise complaints</strong>
+                    despite containing only 23% of NYC's population. Manhattan and Bronx CDs dominate the high-complaint end.
+                </li>
+                <li>
+                    <strong>Residential noise is the dominant complaint type (47%)</strong>, followed by street/sidewalk (22%)
+                    and vehicle noise (9%). Helicopter complaints, while only 5% of total, show distinct geographic patterns
+                    concentrated in helicopter corridors.
+                </li>
+                <li>
+                    <strong>Weekend nights (Friday/Saturday) generate 32% higher complaint volume</strong> than weekday nights,
+                    with the uplift most pronounced in entertainment districts.
+                </li>
+            </ul>
+
+            <h3>2. Behavioral Typology</h3>
+            <ul class="findings-list">
+                <li>
+                    <strong>Nine distinct behavioral clusters</strong> emerge from K-means clustering on complaint rate,
+                    weekend uplift, late-night share, and warm-season ratio. These range from "Low Activity Residential"
+                    to "High Volume Mixed Entertainment" profiles.
+                </li>
+                <li>
+                    <strong>Temporal stability analysis shows 62% of CDs maintain the same cluster assignment</strong>
+                    across all three years (2021-2023), indicating structural behavioral patterns rather than transient phenomena.
+                </li>
+                <li>
+                    <strong>NTA-level analysis (197 residential neighborhoods) reveals finer-grained variation</strong>
+                    within CDs, with some CDs containing multiple behavioral types.
+                </li>
+            </ul>
+
+            <h3>3. Hotspot Persistence</h3>
+            <ul class="findings-list">
+                <li>
+                    <strong>At 250m grid resolution, 19 cells appear in the top 100 hotspots in all three years</strong>,
+                    indicating persistent structural noise sources rather than episodic events.
+                </li>
+                <li>
+                    <strong>Artifact flagging identifies likely data quality issues:</strong> cells with &gt;95% of complaints
+                    from a single coordinate or &gt;200 complaints on a single day are flagged as suspected serial complainants
+                    or data entry errors.
+                </li>
+                <li>
+                    <strong>Gini coefficient analysis shows complaint concentration within CDs varies from 0.45 to 0.85</strong>,
+                    with higher values indicating complaints clustered at specific locations rather than distributed across the district.
+                </li>
+            </ul>
+
+            <h3>4. Heat-Complaint Association</h3>
+            <ul class="findings-list">
+                <li>
+                    <strong>Citywide, each 1C increase in nighttime minimum temperature is associated with a 2.3% increase
+                    in noise complaints</strong>, after controlling for day-of-week, month, and year effects.
+                </li>
+                <li>
+                    <strong>Heat sensitivity varies significantly across CDs</strong>, ranging from near-zero to 5%+ per degree,
+                    with higher sensitivity in areas with more residential complaints.
+                </li>
+                <li>
+                    <strong>The 2021-2023 period included 9,628 "hot nights" (Tmin &gt;= 20C) across all CDs</strong>,
+                    representing potential high-disturbance conditions.
+                </li>
+            </ul>
+
+            <h3>5. Equity Implications</h3>
+            <ul class="findings-list">
+                <li>
+                    <strong>Higher poverty rates and Hispanic composition correlate positively with objective environmental
+                    burden</strong> (r = +0.22 and +0.26 respectively), while Black composition shows a different spatial pattern.
+                </li>
+                <li>
+                    <strong>East Harlem (Manhattan CD 5) emerges as the most environmentally burdened district</strong>,
+                    ranking #1 on the objective Environmental Sleep Index with the highest air pollution levels in NYC.
+                </li>
+                <li>
+                    <strong>10 CDs are classified as "data deserts"</strong> with high objective noise but low complaint rates,
+                    suggesting under-reporting in outer borough residential areas.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <div class="container">
+            <h2>Methodology</h2>
+
+            <p>
+                The analysis follows a reproducible pipeline architecture with 14 scripts, centralized configuration,
+                metadata sidecars for all outputs, and over 430 automated tests. All timestamps are converted to
+                NYC timezone (America/New_York) with DST-safe handling.
+            </p>
+
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="method-step-content">
+                        <h4>Data Acquisition</h4>
+                        <p>
+                            311 complaints fetched via NYC Open Data API (2.1M records). Environmental rasters from
+                            BTS (transportation noise), NASA VIIRS (light), Oregon State PRISM (temperature), and
+                            NYC DOHMH NYCCAS (air quality). All raw data checksummed and manifest-tracked.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-step-content">
+                        <h4>Spatial Processing</h4>
+                        <p>
+                            Complaints geocoded and assigned to 59 residential Community Districts using hardened
+                            spatial joins (within-first, then nearest with 500ft threshold). CRS handling enforced:
+                            EPSG:4326 for storage, EPSG:2263 (NY State Plane) for distance/area operations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-step-content">
+                        <h4>Feature Engineering</h4>
+                        <p>
+                            Nighttime filtering (22:00-07:00), time-bin classification (evening/early_am/core_night/predawn),
+                            weekend identification (Fri/Sat nights), warm-season flagging (Jun-Aug). Rates normalized by
+                            population and area. Environmental exposures computed via zonal statistics with energy-averaged
+                            dB for noise.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-step-content">
+                        <h4>Clustering & Analysis</h4>
+                        <p>
+                            K-means clustering (k=9) on standardized features with reproducibility verification.
+                            Poisson GLM for heat sensitivity with categorical controls. Population-weighted
+                            aggregation for tract-to-CD crosswalks using intersection populations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-step-content">
+                        <h4>Validation & QA</h4>
+                        <p>
+                            CDC PLACES sleep data for ecological validation (with SAE circularity caveat).
+                            Negative control (mammography) confirms no spurious correlations. 430+ unit tests
+                            covering schema validation, algorithmic correctness, and edge cases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Technical Stack</h3>
+            <div class="code-block">
+Python 3.11 | GeoPandas 1.1.1 | Pandas 2.3.3 | NumPy 2.3.5 | Rasterio 1.4.4
+Statsmodels | Scikit-learn | PyProj | Shapely | Requests
+            </div>
+        </div>
+    </section>
+
+    <section id="data">
+        <div class="container">
+            <h2>Data Sources & Outputs</h2>
+
+            <h3>Input Data</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dataset</th>
+                            <th>Source</th>
+                            <th>Coverage</th>
+                            <th>Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>311 Noise Complaints</td>
+                            <td>NYC Open Data API</td>
+                            <td>2021-2023</td>
+                            <td>Point (geocoded)</td>
+                        </tr>
+                        <tr>
+                            <td>Transportation Noise</td>
+                            <td>BTS NTNM 2020</td>
+                            <td>Road + Rail + Aviation</td>
+                            <td>30m raster</td>
+                        </tr>
+                        <tr>
+                            <td>Light at Night</td>
+                            <td>NASA VIIRS VNP46A4</td>
+                            <td>2021-2023 annual</td>
+                            <td>~450m raster</td>
+                        </tr>
+                        <tr>
+                            <td>Nighttime Temperature</td>
+                            <td>Oregon State PRISM</td>
+                            <td>Daily Tmin 2021-2023</td>
+                            <td>4km raster</td>
+                        </tr>
+                        <tr>
+                            <td>Air Quality</td>
+                            <td>NYC DOHMH NYCCAS</td>
+                            <td>PM2.5, NO2 2021-2023</td>
+                            <td>300m raster</td>
+                        </tr>
+                        <tr>
+                            <td>Demographics</td>
+                            <td>US Census ACS 5-Year</td>
+                            <td>2022 estimates</td>
+                            <td>Census tract</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Primary Outputs</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>311 Night Noise Atlas</h4>
+                    <p>
+                        CD-level metrics including complaint counts, rates per 1k population, weekend uplift,
+                        late-night share, and warm-season ratio. Available as GeoJSON for mapping.
+                    </p>
+                    <span class="tag">GeoJSON</span>
+                    <span class="tag">59 CDs</span>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Behavioral Typology</h4>
+                    <p>
+                        Nine-cluster classification based on complaint patterns. Includes CD and NTA-level
+                        assignments with cluster profiles and stability metrics.
+                    </p>
+                    <span class="tag">Parquet</span>
+                    <span class="tag">9 Clusters</span>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Hotspot Grid</h4>
+                    <p>
+                        250m hexagonal grid with complaint counts, concentration metrics, and artifact flags.
+                        Persistent hotspots identified across all three years.
+                    </p>
+                    <span class="tag">GeoJSON</span>
+                    <span class="tag">250m Grid</span>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Heat Sensitivity</h4>
+                    <p>
+                        Per-CD Poisson regression slopes quantifying the temperature-complaint relationship,
+                        with standard errors and citywide temperature-response curve.
+                    </p>
+                    <span class="tag">Parquet</span>
+                    <span class="tag">CSV</span>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Environmental Sleep Index</h4>
+                    <p>
+                        Composite index combining objective noise, light, heat, and air quality exposures.
+                        Includes equity analysis with demographic correlates.
+                    </p>
+                    <span class="tag">Parquet</span>
+                    <span class="tag">4 Domains</span>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Dual-Reality Analysis</h4>
+                    <p>
+                        Classification of CDs as data deserts (under-reporting), neutral, or conflict zones
+                        (over-reporting) based on residuals from objective-to-reported noise regression.
+                    </p>
+                    <span class="tag">Parquet</span>
+                    <span class="tag">59 CDs</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <a href="https://github.com/yoelplutchok/Sleep_ESI_NYC" class="btn" target="_blank">View on GitHub</a>
+                <a href="https://github.com/yoelplutchok/Sleep_ESI_NYC/tree/main/data/processed" class="btn btn-secondary" target="_blank">Browse Data Outputs</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Reproducibility</h2>
+
+            <p>
+                This project follows a strict reproducibility protocol with 20 guardrails covering path resolution,
+                CRS handling, atomic writes, provenance tracking, and deterministic outputs.
+            </p>
+
+            <div class="two-col">
+                <div>
+                    <h3>Pipeline Architecture</h3>
+                    <ul class="findings-list">
+                        <li>
+                            <strong>14 numbered scripts</strong> executed in sequence, each with JSONL structured logging
+                        </li>
+                        <li>
+                            <strong>Metadata sidecars</strong> for all outputs capturing input hashes, git commit,
+                            runtime environment, and QA statistics
+                        </li>
+                        <li>
+                            <strong>Centralized configuration</strong> in YAML files for time windows, thresholds,
+                            and index weights
+                        </li>
+                        <li>
+                            <strong>Atomic file operations</strong> using temp-file-then-rename pattern to prevent
+                            corrupted state on failure
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Test Coverage</h3>
+                    <ul class="findings-list">
+                        <li>
+                            <strong>430+ automated tests</strong> covering schema validation, value bounds,
+                            algorithmic correctness, and edge cases
+                        </li>
+                        <li>
+                            <strong>CD labeling policy enforcement</strong> with hard failure on any inconsistency
+                            between computed and stored labels
+                        </li>
+                        <li>
+                            <strong>Spatial join hardening</strong> with logged distance distributions and
+                            &lt;1% unmatched threshold
+                        </li>
+                        <li>
+                            <strong>Reproducibility verification</strong> for clustering with re-run comparison
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Citation</h3>
+            <div class="citation-box">
+Plutchok, Y.Y. (2025). NYC Night Signals Atlas: Nighttime Noise Disturbance
+Patterns Across New York City Community Districts, 2021-2023.
+https://github.com/yoelplutchok/Sleep_ESI_NYC
+            </div>
+
+            <h3>Data Sources</h3>
+            <p>
+                <a href="https://data.cityofnewyork.us/" target="_blank">NYC Open Data</a> (311 Service Requests, Community Districts, Census Tracts) |
+                <a href="https://www.bts.gov/geospatial/national-transportation-noise-map" target="_blank">BTS National Transportation Noise Map</a> |
+                <a href="https://ladsweb.modaps.eosdis.nasa.gov/" target="_blank">NASA LAADS DAAC</a> (VIIRS Black Marble) |
+                <a href="https://prism.oregonstate.edu/" target="_blank">PRISM Climate Group</a> |
+                <a href="https://nyccas.cityofnewyork.us/" target="_blank">NYC Community Air Survey</a> |
+                <a href="https://www.census.gov/programs-surveys/acs" target="_blank">US Census Bureau ACS</a> |
+                <a href="https://www.cdc.gov/places/" target="_blank">CDC PLACES</a>
+            </p>
+
+            <h3>License</h3>
+            <p>
+                Code: MIT License | Data outputs: CC BY 4.0
+            </p>
+
+            <p style="margin-top: 32px; opacity: 0.7;">
+                Built with Python, GeoPandas, and reproducible science principles.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

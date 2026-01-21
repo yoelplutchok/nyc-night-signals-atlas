@@ -1,0 +1,78 @@
+# =============================================================================
+# Index Weighting Variants
+# =============================================================================
+# Per research plan Section 5 and Pipeline Contract.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# O-ESI Weighting Schemes
+# -----------------------------------------------------------------------------
+# Domains: noise_obj, light, heat, air
+# All weights must sum to 1.0
+
+oesi_weights:
+  # Equal weighting (primary/default)
+  equal:
+    noise_obj: 0.25
+    light: 0.25
+    heat: 0.25
+    air: 0.25
+    label: "Equal weights"
+  
+  # Literature-informed (sensitivity)
+  # Based on relative effect sizes from sleep literature
+  literature:
+    noise_obj: 0.35
+    light: 0.25
+    heat: 0.25
+    air: 0.15
+    label: "Literature-informed"
+  
+  # Noise-emphasized (sensitivity)
+  noise_emphasis:
+    noise_obj: 0.40
+    light: 0.20
+    heat: 0.25
+    air: 0.15
+    label: "Noise-emphasized"
+
+# -----------------------------------------------------------------------------
+# O-ESI Without Objective Noise (Tier 3 fallback)
+# -----------------------------------------------------------------------------
+# When objective noise is unavailable, redistribute weights
+
+oesi_excl_noise:
+  equal:
+    light: 0.333
+    heat: 0.333
+    air: 0.334
+    label: "Equal weights (excl. noise)"
+  
+  literature:
+    light: 0.40
+    heat: 0.35
+    air: 0.25
+    label: "Literature-informed (excl. noise)"
+
+# -----------------------------------------------------------------------------
+# Standardization Methods (Section 5.1)
+# -----------------------------------------------------------------------------
+standardization:
+  headline: "robust_z"  # median/MAD
+  sensitivities:
+    - "classic_z"       # mean/SD
+    - "winsorized_z"    # winsorized mean/SD
+    - "percentile_rank" # percentile rank
+
+# -----------------------------------------------------------------------------
+# Directionality (R20)
+# -----------------------------------------------------------------------------
+# All domains: higher raw value = worse for sleep
+# This is enforced by tests
+directionality:
+  noise_obj: "higher_worse"
+  light: "higher_worse"
+  heat: "higher_worse"
+  air: "higher_worse"  # Higher pollution = worse
+  noise_311: "higher_worse"  # More complaints = more disturbance
+

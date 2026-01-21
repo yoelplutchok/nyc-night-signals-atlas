@@ -1,0 +1,21 @@
+{
+  "script": "07_build_heat_sensitivity",
+  "run_id": "20260121_134513",
+  "timestamp": "2026-01-21T13:46:23.307074",
+  "inputs": {
+    "prism_dir": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/heat_prism",
+    "raw_311": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/311_noise/raw_311_noise_2021_2023_20251217.csv"
+  },
+  "outputs": {
+    "cd_heat_sensitivity": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/weather/cd_heat_sensitivity.parquet",
+    "citywide_temp_curve": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/weather/citywide_temp_curve.csv"
+  },
+  "stats": {
+    "citywide_slope": 0.008300524539137927,
+    "citywide_pct_increase": 0.8335069406974371
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}

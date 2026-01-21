@@ -1,0 +1,350 @@
+# =============================================================================
+# Sleep ESI Configuration Parameters
+# =============================================================================
+# This file is the single source of truth for all analysis parameters.
+# Per research plan Section 0.4 and Section 4.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Time Windows (Section 0.4)
+# -----------------------------------------------------------------------------
+time_windows:
+  primary:
+    year_start: 2021
+    year_end: 2023
+    label: "2021-2023"
+  sensitivity:
+    year_start: 2022
+    year_end: 2023
+    label: "2022-2023 (pandemic distortion check)"
+  # Optional exploratory (complaint behavior only)
+  exploratory_2019:
+    year_start: 2019
+    year_end: 2019
+    label: "2019 (pre-pandemic baseline, complaints only)"
+
+# -----------------------------------------------------------------------------
+# Nighttime Windows (Section 4.1.1)
+# -----------------------------------------------------------------------------
+nighttime:
+  primary:
+    start_hour: 22  # 10 PM
+    end_hour: 7     # 7 AM
+    label: "22:00-07:00"
+  sensitivity:
+    start_hour: 23  # 11 PM
+    end_hour: 6     # 6 AM
+    label: "23:00-06:00"
+  timezone: "America/New_York"
+
+# -----------------------------------------------------------------------------
+# Warm Season for Heat Analysis (Section 4.3)
+# -----------------------------------------------------------------------------
+warm_season:
+  primary:
+    months: [6, 7, 8]  # Jun-Aug
+    label: "Jun-Aug"
+  sensitivity:
+    months: [5, 6, 7, 8, 9]  # May-Sep
+    label: "May-Sep"
+
+# -----------------------------------------------------------------------------
+# Hot Night Thresholds (Section 4.3)
+# -----------------------------------------------------------------------------
+hot_night_thresholds:
+  # Celsius values
+  primary_c: 20.0       # ≥20°C (primary comparability)
+  sensitivity_c: 24.0   # ≥24°C (NYC higher-bar)
+  percentile: 90        # ≥p90 (distribution-based NYC-relative)
+
+# -----------------------------------------------------------------------------
+# Spatial Join Parameters (Section 4.1.1, R6)
+# -----------------------------------------------------------------------------
+spatial_join:
+  # Maximum distance (in feet, EPSG:2263) for nearest join fallback
+  max_distance_ft: 500
+  # CRS for spatial operations
+  projected_crs: "EPSG:2263"
+  geographic_crs: "EPSG:4326"
+
+# -----------------------------------------------------------------------------
+# CRS Bounds Checks (Section 3.3, R3)
+# -----------------------------------------------------------------------------
+bounds_checks:
+  epsg_4326:
+    lon_min: -75.0
+    lon_max: -73.0
+    lat_min: 40.0
+    lat_max: 41.5
+  epsg_2263:
+    # NY StatePlane feet - approximate NYC bounds
+    x_min: 900000
+    x_max: 1100000
+    y_min: 110000
+    y_max: 280000
+
+# -----------------------------------------------------------------------------
+# 311 Noise Categories (Section 4.1.1)
+# -----------------------------------------------------------------------------
+noise_311:
+  complaint_types:
+    - "Noise - Residential"
+    - "Noise - Street/Sidewalk"
+    - "Noise - Commercial"
+    - "Noise - Vehicle"
+    - "Noise - Park"
+    - "Noise"
+    - "Noise - Helicopter"
+    - "Noise - House of Worship"
+  # Subtype categories for optional breakdown
+  subtypes:
+    music:
+      - "Loud Music/Party"
+      - "Loud Music"
+    construction:
+      - "Construction"
+      - "Construction Before/After Hours"
+    traffic:
+      - "Car/Truck Horn"
+      - "Car/Truck Music"
+      - "Engine Idling"
+
+# -----------------------------------------------------------------------------
+# Time-of-Night Bins for 311 Analysis (NYC Night Signals Atlas)
+# -----------------------------------------------------------------------------
+night_bins:
+  # Bins within the nighttime window (22:00-07:00)
+  # For computing shares of complaints by time of night
+  bins:
+    - name: "evening"      # 22:00-00:00 (early night)
+      start: 22
+      end: 24
+    - name: "early_am"     # 00:00-02:00 (post-midnight)
+      start: 0
+      end: 2
+    - name: "core_night"   # 02:00-04:00 (deepest sleep hours)
+      start: 2
+      end: 4
+    - name: "predawn"      # 04:00-07:00 (early risers)
+      start: 4
+      end: 7
+  
+  # Late-night share definition: hours used for late_night_share metric
+  # These are the "core sleep" hours where disturbance is most impactful
+  late_night_hours: [1, 2, 3]  # 01:00-04:00
+
+# -----------------------------------------------------------------------------
+# Weekend Definition for Uplift Calculation
+# -----------------------------------------------------------------------------
+weekend:
+  # A "night" belongs to the day it STARTS on (Python weekday())
+  # Friday night (22:00 Fri → 07:00 Sat) belongs to Friday
+  # Saturday night (22:00 Sat → 07:00 Sun) belongs to Saturday
+  weekend_nights: [4, 5]  # Friday=4, Saturday=5
+  weekday_nights: [0, 1, 2, 3, 6]  # Mon=0, Tue=1, Wed=2, Thu=3, Sun=6
+  
+  # Weekend uplift formula:
+  # (weekend_count / 2 days) / (weekday_count / 5 days)
+  # Value > 1 means more complaints per night on weekends
+
+# -----------------------------------------------------------------------------
+# Raster Processing (Section 4.2, R8)
+# -----------------------------------------------------------------------------
+raster:
+  # Minimum coverage fraction required
+  min_coverage: 0.5
+  # Maximum nodata fraction allowed
+  max_nodata_fraction: 0.3
+
+# -----------------------------------------------------------------------------
+# Crosswalk Weights (Section 3.4)
+# -----------------------------------------------------------------------------
+crosswalk:
+  weight_tolerance: 0.01  # Weights must sum to 1 ± this value per CD
+
+# -----------------------------------------------------------------------------
+# Random Seeds (R15)
+# -----------------------------------------------------------------------------
+random_seeds:
+  bootstrap: 42
+  general: 2024
+  clustering: 12345  # Deterministic clustering results
+
+# -----------------------------------------------------------------------------
+# Night Signatures Typology (Script 05)
+# -----------------------------------------------------------------------------
+typology:
+  # K range to test
+  k_range: [5, 6, 7, 8, 9]
+  
+  # Features to use for clustering (from 311_cd_features)
+  # All behavioral features, no objective layers
+  features:
+    # Intensity
+    - "rate_per_1k_pop"
+    - "rate_per_km2"
+    # Complaint type shares
+    - "share_noise___residential"
+    - "share_noise___street/sidewalk"
+    - "share_noise___commercial"
+    - "share_noise___vehicle"
+    - "share_noise___park"
+    - "share_noise"
+    - "share_noise___helicopter"
+    - "share_noise___house_of_worship"
+    # Time-of-night shares
+    - "share_evening"
+    - "share_early_am"
+    - "share_core_night"
+    - "share_predawn"
+    # Behavioral metrics
+    - "late_night_share"
+    - "weekend_uplift"
+    - "warm_season_ratio"
+  
+  # Minimum acceptable silhouette score
+  min_silhouette: 0.1
+  
+  # Minimum cluster size (warn if any cluster has fewer members)
+  min_cluster_size: 2
+  
+  # Final cluster labels (approved 2025-12-21)
+  # Keys are cluster_id (0-indexed), values are human-readable labels
+  cluster_labels:
+    0: "Street-Dominated Activity"
+    1: "Weekend-Heavy Residential"
+    2: "Helicopter Corridor"
+    3: "Airport-Adjacent (Outlier)"
+    4: "Low-Intensity Baseline"
+    5: "Residential-Dominated Outlier"
+    6: "Evening Street Activity"
+    7: "Nightlife & Entertainment"
+    8: "Park-Influenced Outlier"
+  
+  # Singleton clusters flagged as outliers
+  outlier_clusters: [3, 5, 8]
+
+# -----------------------------------------------------------------------------
+# NTA Night Signatures Typology (Script 11)
+# -----------------------------------------------------------------------------
+nta_typology:
+  # K range to test (wider range for 197 NTAs)
+  k_range: [8, 9, 10, 11, 12, 13, 14, 15]
+  
+  # Minimum complaint count to include NTA in clustering
+  # NTAs below this threshold get cluster_id=-1 ("Low Volume")
+  min_cluster_count: 200
+  
+  # Features to use for clustering (same as CD typology)
+  features:
+    # Intensity
+    - "rate_per_1k_pop"
+    - "rate_per_km2"
+    # Complaint type shares
+    - "share_noise___residential"
+    - "share_noise___street/sidewalk"
+    - "share_noise___commercial"
+    - "share_noise___vehicle"
+    - "share_noise___park"
+    - "share_noise"
+    - "share_noise___helicopter"
+    - "share_noise___house_of_worship"
+    # Time-of-night shares
+    - "share_evening"
+    - "share_early_am"
+    - "share_core_night"
+    - "share_predawn"
+    # Behavioral metrics
+    - "late_night_share"
+    - "weekend_uplift"
+    - "warm_season_ratio"
+  
+  # Minimum acceptable silhouette score
+  min_silhouette: 0.1
+  
+  # Minimum cluster size (warn if any cluster has fewer members)
+  min_cluster_size: 2
+  
+  # Singleton control: K selection will prefer K values where:
+  # - number of singleton clusters <= max_singletons
+  # - OR fraction of singleton clusters <= max_singleton_fraction
+  singleton_control:
+    max_singletons: 2
+    max_singleton_fraction: 0.10  # 10% of clusters
+
+# -----------------------------------------------------------------------------
+# Temporal Stability Classification (Script 08a)
+# -----------------------------------------------------------------------------
+stability:
+  # Entropy thresholds for classification
+  # entropy_score is computed as -sum(p * log2(p)) / log2(3) for 3 years
+  # Values in [0, 1]: 0 = always same cluster, 1 = different cluster each year
+  entropy_threshold_structural: 0.0      # entropy <= this → "Structural"
+  entropy_threshold_episodic: 0.9        # entropy >= this → "Episodic"
+  # Everything in between → "Semi-structural"
+  
+  # For stability_class2 (3-tier):
+  # - Strict Structural: entropy == 0
+  # - Mostly Structural: is_stable_2_of_3 AND entropy <= mostly_structural_entropy_threshold
+  # - Episodic: otherwise
+  mostly_structural_entropy_threshold: 0.60
+  
+  # Alternative: transition_count rules (as backup interpretation)
+  # transition_count = # distinct clusters across 3 years (1, 2, or 3)
+  # 1 → Structural, 2 → Semi-structural, 3 → Episodic
+
+# -----------------------------------------------------------------------------
+# Hotspot Concentration Analysis (Script 06)
+# -----------------------------------------------------------------------------
+hotspots:
+  # Grid cell size in feet (EPSG:2263)
+  # 820 ft ≈ 250 meters (standard for urban analysis)
+  cell_size_ft: 820
+  
+  # Minimum complaints to flag a cell as a "hotspot"
+  hotspot_threshold: 10
+  
+  # Top N cells to consider for per-CD concentration metrics
+  top_n_cells: 10
+  
+  # Top N hotspots to output citywide
+  top_n_citywide: 100
+
+# -----------------------------------------------------------------------------
+# Hotspot Investigation (Script 06b)
+# -----------------------------------------------------------------------------
+hotspot_investigation:
+  # Number of top cells to investigate
+  top_n_cells: 20
+  
+  # Decimal places for rounding lat/lon (5 = ~1m precision, 6 = ~10cm)
+  latlon_decimals: 5
+  
+  # Flags for identifying potential artifacts
+  flags:
+    # Cell is "repeat location dominant" if this share of complaints are at single coordinate
+    repeat_location_share_threshold: 0.90
+    # Cell is "suspected artifact" if single-coord share exceeds this
+    suspected_artifact_share_threshold: 0.95
+    # OR if max single-day count exceeds this (complaint storms)
+    suspected_artifact_single_day_threshold: 200
+
+# -----------------------------------------------------------------------------
+# Hotspot Sensitivity Analysis (Script 06c)
+# -----------------------------------------------------------------------------
+hotspot_sensitivity:
+  # Grid sizes to test (in feet, EPSG:2263)
+  # 410 ft ≈ 125m, 820 ft ≈ 250m, 1640 ft ≈ 500m
+  grid_sizes_ft: [410, 820, 1640]
+  
+  # Complaint thresholds for hotspot designation
+  thresholds: [10, 25, 50]
+  
+  # Top N cells for overlap analysis
+  top_n_cells: 100
+  
+  # Primary outputs use these settings
+  primary_grid_size_ft: 820
+  primary_threshold_analysis: 10  # analysis-grade (ge10)
+  primary_threshold_map: 50       # map-grade (ge50)
+

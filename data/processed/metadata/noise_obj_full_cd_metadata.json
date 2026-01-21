@@ -1,0 +1,37 @@
+{
+  "script": "04_build_noise_objective",
+  "run_id": "20251217_021613",
+  "timestamp": "2025-12-17T02:16:14.432611",
+  "inputs": {
+    "raster": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/raw/noise_objective/CONUS_rail_road_and_aviation_noise_2020/State_rasters/NY_rail_road_and_aviation_noise_2020.tif",
+    "raster_sha256": "1ae83ad2d5ed5e37fb0e7f8ec90aa376de0e0f12caea8e4bcb1c46946404a850",
+    "cd59": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/geo/cd59.parquet"
+  },
+  "outputs": {
+    "noise_obj_full_cd": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/domains/noise_obj_full_cd.parquet"
+  },
+  "stats": {
+    "n_districts": 59,
+    "db_mean_range": [
+      55.0356330871582,
+      81.54620361328125
+    ],
+    "na_count": 0,
+    "avg_nodata_pct": 61.37683253780163
+  },
+  "raster_metadata": {
+    "crs": "ESRI:102039",
+    "resolution_m": 30,
+    "source": "BTS National Transportation Noise Map 2020",
+    "noise_types": [
+      "road",
+      "rail",
+      "aviation"
+    ],
+    "metric": "LAeq (24-hr equivalent A-weighted sound level)"
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}

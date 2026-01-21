@@ -1,0 +1,104 @@
+{
+  "script": "10_validation",
+  "run_id": "20251218_002027",
+  "timestamp": "2025-12-18T00:20:29.815317",
+  "inputs": {
+    "esi_with_acs": "191adf0e19b55cb29513e6b557961776fcf8b30550bcc48ec1dd75091b2aae2f",
+    "crosswalk": "2e6bfaae05cdfe75bfc52dd516719f86d041d8a473b32f19b9ad71ef8a0dc69c"
+  },
+  "outputs": {
+    "validation_models": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/validation/validation_models.csv",
+    "validation_correlations": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/validation/validation_correlations.csv",
+    "esi_with_sleep": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/validation/esi_with_sleep.parquet",
+    "validation_summary": "/Users/yoelplutchok/Desktop/Sleep_ESI_NYC/data/processed/validation/validation_summary.json"
+  },
+  "data_source": {
+    "api": "https://data.cdc.gov/resource/cwsq-ngmh.json",
+    "measures": {
+      "SLEEP": "Short sleep duration among adults (<7 hours)",
+      "MHLTH": "Frequent mental distress among adults",
+      "GHLTH": "Fair or poor self-rated health status"
+    },
+    "negative_control": "MAMMOUSE",
+    "note": "CDC PLACES fallback used (CHS not programmatically accessible)"
+  },
+  "sae_circularity_caveat": "CDC PLACES uses Small Area Estimation (SAE) methods that incorporate demographic predictors similar to those in ESI. This may inflate observed correlations. Treat these results as EXPLORATORY, not causal. True validation requires independent sleep outcome data (e.g., survey microdata).",
+  "summary": {
+    "data_source": {
+      "primary": "NYC CHS (not accessible programmatically)",
+      "fallback": "CDC PLACES 2023 (used)",
+      "measure": "Short sleep duration among adults (<7 hours)",
+      "geography": "Census tract \u2192 CD59 via population-weighted aggregation"
+    },
+    "sae_circularity_caveat": "CDC PLACES uses Small Area Estimation (SAE) methods that incorporate demographic predictors similar to those in ESI. This may inflate observed correlations. Treat these results as EXPLORATORY, not causal. True validation requires independent sleep outcome data (e.g., survey microdata).",
+    "n_districts": 59,
+    "sleep_outcome": {
+      "mean": 39.52922321327279,
+      "std": 4.411638715681464,
+      "min": 30.884808136283983,
+      "max": 48.56197195939037
+    },
+    "key_correlations": {
+      "oesi_sleep_pearson": {
+        "r": -0.19423809407814718,
+        "ci_lower": -0.42898238589399823,
+        "ci_upper": 0.0650813910756218,
+        "p_value": 0.140446856846536,
+        "n": 59,
+        "variable_x": "OESI_4_full_noise",
+        "variable_y": "sleep",
+        "method": "pearson"
+      },
+      "oesi_sleep_spearman": {
+        "r": -0.15078901227352426,
+        "ci_lower": -0.39174431902802453,
+        "ci_upper": 0.10952240499207372,
+        "p_value": 0.25429325795419927,
+        "n": 59,
+        "variable_x": "OESI_4_full_noise",
+        "variable_y": "sleep",
+        "method": "spearman"
+      }
+    },
+    "key_regressions": {
+      "V1_unadjusted": {
+        "r_squared": 0.03772843719111185,
+        "coef_OESI": -1.1652868214450314,
+        "pval_OESI": 0.14044685684653518
+      },
+      "V2_borough_FE": {
+        "r_squared": 0.43597133899745943,
+        "coef_OESI": -0.4890272347873212,
+        "pval_OESI": 0.5098764299340576
+      },
+      "V3_demographics": {
+        "r_squared": 0.9563097203693002,
+        "coef_OESI": -0.10161661591700591,
+        "pval_OESI": 0.6517688524885223
+      },
+      "V4_RDI": {
+        "r_squared": 0.46051811253542396,
+        "coef_OESI": NaN,
+        "pval_OESI": NaN
+      },
+      "V5_SDBI": {
+        "r_squared": 0.43151399604445007,
+        "coef_OESI": NaN,
+        "pval_OESI": NaN
+      },
+      "V6_negative_control": {
+        "r_squared": 0.1290877986791258,
+        "coef_OESI": -0.5079175388991843,
+        "pval_OESI": 0.362135594946846
+      }
+    },
+    "negative_control": {
+      "variable": "MAMMOUSE",
+      "interpretation": "Should show no significant association with ESI"
+    }
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  }
+}
